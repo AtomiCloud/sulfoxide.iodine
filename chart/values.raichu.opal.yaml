@@ -11,22 +11,12 @@ vcluster:
     <<: *tags
   annotations:
     <<: *tags
-  sync:
-    ingresses: true
   syncer:
     extraArgs:
       - --kube-config-context-name=raichu-opal
       - --out-kube-config-server=https://raichu.kubernetes.atomi.cloud
   ingress:
-    enabled: true
-    ingressClassName: nginx
-    annotations:
-      nginx.ingress.kubernetes.io/backend-protocol: HTTPS
-      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-      nginx.ingress.kubernetes.io/ssl-redirect: "true"
     host: raichu.kubernetes.atomi.cloud
-  telemetry:
-    disabled: true
 
 
 
