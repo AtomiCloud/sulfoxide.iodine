@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.0.0...v1.0.1) (2023-10-04)
+
+
+### 🐛 Bug Fixes
+
+* incorrect opal values ([e619073](https://github.com/AtomiCloud/sulfoxide.iodine/commit/e6190737b15e0539981d2a0b073db8d39f339d60))
+
 ## 1.0.0 (2023-10-04)
 
 
