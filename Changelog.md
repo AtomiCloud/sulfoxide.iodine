@@ -1,3 +1,10 @@
+## 1.0.0 (2023-10-04)
+
+
+### 🚀 New Features
+
+* initial commit ([962a572](https://github.com/AtomiCloud/sulfoxide.iodine/commit/962a5721d4318ff039d39709255db7dab9afca43))
+
 ## 1.0.0 (2023-09-30)
 
 
