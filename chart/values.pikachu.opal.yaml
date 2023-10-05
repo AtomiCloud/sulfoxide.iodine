@@ -14,9 +14,9 @@ vcluster:
   syncer:
     extraArgs:
       - --kube-config-context-name=pikachu-opal
-      - --out-kube-config-server=https://pikachu.kubernetes.atomi.cloud
+      - --out-kube-config-server=https://pikachu.opal.kubernetes.atomi.cloud
   ingress:
-    host: pikachu.kubernetes.atomi.cloud
+    host: pikachu.opal.kubernetes.atomi.cloud
 
 
 
