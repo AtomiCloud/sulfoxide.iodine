@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.1.1...v1.2.0) (2023-10-05)
+
+
+### 🚀 New Features
+
+* sync metric server ([181945f](https://github.com/AtomiCloud/sulfoxide.iodine/commit/181945f0728a324c1cdf4de3bb56bdbd44a98c4d))
+
 ## [1.1.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.1.0...v1.1.1) (2023-10-05)
 
 
