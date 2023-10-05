@@ -24,7 +24,7 @@ vcluster:
       - --tls-san=https://kubernetes.atomi.cloud
   ingress:
     enabled: true
-    ingressClassName: kong
+    ingressClassName: nginx
     host: kubernetes.atomi.cloud
   telemetry:
     disabled: true
