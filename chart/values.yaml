@@ -19,6 +19,12 @@ vcluster:
   sync:
     ingresses:
       enabled: true
+  proxy:
+    metricsServer:
+      nodes:
+        enabled: true
+      pods:
+        enabled: true
   syncer:
     extraArgs:
       - --tls-san=https://kubernetes.atomi.cloud
