@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.0.1...v1.1.0) (2023-10-05)
+
+
+### 🚀 New Features
+
+* include cluster in domain ([09c8bed](https://github.com/AtomiCloud/sulfoxide.iodine/commit/09c8bed09977e450532011a2dbd64f160371e05e))
+
 ## [1.0.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.0.0...v1.0.1) (2023-10-04)
 
 
