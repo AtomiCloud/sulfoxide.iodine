@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.1.0...v1.1.1) (2023-10-05)
+
+
+### 🐛 Bug Fixes
+
+* nginx ingress instead of kong ([d19fe8d](https://github.com/AtomiCloud/sulfoxide.iodine/commit/d19fe8d13fb975188514fffee12b17c80bdcad91))
+
 ## [1.1.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.0.1...v1.1.0) (2023-10-05)
 
 
