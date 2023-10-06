@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.2.0...v1.3.0) (2023-10-06)
+
+
+### 🚀 New Features
+
+* upsync secrets ([8a4c93a](https://github.com/AtomiCloud/sulfoxide.iodine/commit/8a4c93a9a0ce8ff77d89495790cfc0d2873f44a3))
+
 ## [1.2.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.1.1...v1.2.0) (2023-10-05)
 
 
