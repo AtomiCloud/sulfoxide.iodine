@@ -42,6 +42,11 @@ vcluster:
     <<: *tags
   sync:
     generic:
+      role:
+        extraRules:
+          - apiGroups: [ "apps" ]
+            resources: [ "deployments" ]
+            verbs: [ "*" ]
       config: |-
         version: v1beta1
         export:
