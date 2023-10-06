@@ -41,17 +41,6 @@ vcluster:
   annotations:
     <<: *tags
   sync:
-    generic:
-      role:
-        extraRules:
-          - apiGroups: [ "apps" ]
-            resources: [ "deployments" ]
-            verbs: [ "*" ]
-      config: |-
-        version: v1beta1
-        export:
-          - apiVersion: apps/v1
-            kind: Deployment
     configmaps:
       all: true
     secrets:
