@@ -66,8 +66,13 @@ vcluster:
     secret-syncer:
       image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-amd:1.0.0
       imagePullPolicy: IfNotPresent
-
-
-
+  init:
+    manifests: |
+      apiVersion: v1
+      kind: Namespace
+      metadata:
+        labels:
+          kubernetes.io/metadata.name: sulfoxide
+        name: sulfoxide
 
 
