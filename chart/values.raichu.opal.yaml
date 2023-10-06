@@ -6,6 +6,11 @@ tags: &tags
   atomi.cloud/landscape: *landscape
   atomi.cloud/cluster: *cluster
 
+auth:
+  name: raichu-root-token
+  remoteName: RAICHU_SULFOXIDE_SOS
+  upsyncNamespace: sulfoxide
+
 vcluster:
   labels:
     <<: *tags
@@ -14,9 +19,9 @@ vcluster:
   syncer:
     extraArgs:
       - --kube-config-context-name=raichu-opal
-      - --out-kube-config-server=https://raichu.opal.kubernetes.atomi.cloud
+      - --out-kube-config-server=https://raichu.opal.kubernetes.cluster.atomi.cloud
   ingress:
-    host: raichu.opal.kubernetes.atomi.cloud
+    host: raichu.opal.kubernetes.cluster.atomi.cloud
 
 
 

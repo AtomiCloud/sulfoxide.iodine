@@ -10,6 +10,30 @@ tags: &tags
   atomi.cloud/service: *service
   atomi.cloud/layer: *layer
 
+# -- Root Doppler token
+auth:
+  # -- external secret refresh interval
+  refreshInterval: 1h
+  # -- Secret store to reference
+  secretStore:
+    # -- name of the secret store to reference
+    name: doppler
+    # -- kind of the secret store to reference
+    kind: ClusterSecretStore
+  policy:
+    # -- External Secret creation policy
+    creation: Owner
+    # -- External Secret deletion policy
+    deletion: Retain
+  # -- name of the secret to be created
+  name: pichu-root-token
+  # -- name of DOPPLER_TOKEN to be stored
+  remoteName: PICHU_SULFOXIDE_SOS
+  # -- upsync namespace
+  upsyncNamespace: default
+  # -- secret key to store DOPPLER_TOKEN
+  secretKey: DOPPLER_TOKEN
+
 # -- Virtual Cluster Configuration. See [vcluster documentation](https://artifacthub.io/packages/helm/loft/vcluster)
 vcluster:
   labels:
@@ -17,6 +41,10 @@ vcluster:
   annotations:
     <<: *tags
   sync:
+    configmaps:
+      all: true
+    secrets:
+      all: true
     ingresses:
       enabled: true
   proxy:
@@ -34,6 +62,10 @@ vcluster:
     host: kubernetes.atomi.cloud
   telemetry:
     disabled: true
+  plugin:
+    secret-syncer:
+      image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-amd:1.0.0
+      imagePullPolicy: IfNotPresent
 
 
 

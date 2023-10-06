@@ -6,6 +6,12 @@ tags: &tags
   atomi.cloud/landscape: *landscape
   atomi.cloud/cluster: *cluster
 
+auth:
+  name: pikachu-root-token
+  remoteName: PIKACHU_SULFOXIDE_SOS
+  upsyncNamespace: sulfoxide
+
+
 vcluster:
   labels:
     <<: *tags
@@ -14,9 +20,9 @@ vcluster:
   syncer:
     extraArgs:
       - --kube-config-context-name=pikachu-opal
-      - --out-kube-config-server=https://pikachu.opal.kubernetes.atomi.cloud
+      - --out-kube-config-server=https://pikachu.opal.kubernetes.cluster.atomi.cloud
   ingress:
-    host: pikachu.opal.kubernetes.atomi.cloud
+    host: pikachu.opal.kubernetes.cluster.atomi.cloud
 
 
 
