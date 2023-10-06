@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.3.0...v1.3.1) (2023-10-06)
+
+
+### 🐛 Bug Fixes
+
+* initialize with namespace ([ad6362c](https://github.com/AtomiCloud/sulfoxide.iodine/commit/ad6362c65cbb7e5e394db7ab6d318e27c5ff2f1c))
+
 ## [1.3.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.2.0...v1.3.0) (2023-10-06)
 
 
