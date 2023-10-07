@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.3.1...v1.3.2) (2023-10-07)
+
+
+### 🐛 Bug Fixes
+
+* not syncing ephemeral containers to host for vcluster ([80bf70c](https://github.com/AtomiCloud/sulfoxide.iodine/commit/80bf70cf78469c83b4c4f7454b9bea659f957178))
+
 ## [1.3.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.3.0...v1.3.1) (2023-10-06)
 
 
