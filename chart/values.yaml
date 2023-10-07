@@ -47,6 +47,12 @@ vcluster:
       all: true
     ingresses:
       enabled: true
+    pods:
+      enabled: true
+      # Sync ephemeralContainers to host cluster
+      ephemeralContainers: true
+      # Sync readiness gates to host cluster
+      status: true
   proxy:
     metricsServer:
       nodes:
