@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.3.2...v1.4.0) (2023-10-08)
+
+
+### 🚀 New Features
+
+* sync all nodes ([2b7e5f5](https://github.com/AtomiCloud/sulfoxide.iodine/commit/2b7e5f5b70fc9782e01735d827a774d8d9fa564d))
+
 ## [1.3.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.3.1...v1.3.2) (2023-10-07)
 
 
