@@ -1,0 +1,36 @@
+# -- Virtual Cluster Configuration. See [vcluster documentation](https://artifacthub.io/packages/helm/loft/vcluster)
+vcluster:
+
+  sync:
+    configmaps:
+      all: true
+    secrets:
+      all: true
+    ingresses:
+      enabled: true
+    pods:
+      enabled: true
+      ephemeralContainers: true
+      status: true
+    nodes:
+      enabled: true
+      syncAllNodes: true
+      syncNodeChanges: true
+      enableScheduler: true
+      fakeKubeletIPs: false
+  rbac:
+    role:
+      create: true
+  proxy:
+    metricsServer:
+      nodes:
+        enabled: true
+      pods:
+        enabled: true
+  ingress:
+    enabled: false
+  telemetry:
+    disabled: true
+
+
+

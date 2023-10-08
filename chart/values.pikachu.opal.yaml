@@ -23,8 +23,3 @@ vcluster:
       - --out-kube-config-server=https://pikachu.opal.kubernetes.cluster.atomi.cloud
   ingress:
     host: pikachu.opal.kubernetes.cluster.atomi.cloud
-
-
-
-
-

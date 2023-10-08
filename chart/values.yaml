@@ -49,10 +49,14 @@ vcluster:
       enabled: true
     pods:
       enabled: true
-      # Sync ephemeralContainers to host cluster
       ephemeralContainers: true
-      # Sync readiness gates to host cluster
       status: true
+    nodes:
+      enabled: true
+      fakeKubeletIPs: true
+      enableScheduler: true
+      syncNodeChanges: true
+      syncAllNodes: true
   proxy:
     metricsServer:
       nodes:

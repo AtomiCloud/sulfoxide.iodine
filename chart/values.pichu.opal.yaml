@@ -23,8 +23,3 @@ vcluster:
       - --out-kube-config-server=https://pichu.opal.kubernetes.cluster.atomi.cloud
   ingress:
     host: pichu.opal.kubernetes.cluster.atomi.cloud
-
-
-
-
-

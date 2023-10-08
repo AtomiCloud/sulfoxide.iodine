@@ -22,8 +22,3 @@ vcluster:
       - --out-kube-config-server=https://raichu.opal.kubernetes.cluster.atomi.cloud
   ingress:
     host: raichu.opal.kubernetes.cluster.atomi.cloud
-
-
-
-
-
