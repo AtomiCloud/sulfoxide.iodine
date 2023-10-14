@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.4.0...v1.5.0) (2023-10-14)
+
+
+### 🚀 New Features
+
+* include SecretStore ([26b81bd](https://github.com/AtomiCloud/sulfoxide.iodine/commit/26b81bd0b7fa731fe3ac79d123225e69267555f7))
+
 ## [1.4.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.3.2...v1.4.0) (2023-10-08)
 
 
