@@ -22,7 +22,9 @@ with packages;
 
   main = [
     vcluster
+    skopeo
   ];
+
 
   lint = [
     # core

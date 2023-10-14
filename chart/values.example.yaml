@@ -1,36 +1,41 @@
-# -- Virtual Cluster Configuration. See [vcluster documentation](https://artifacthub.io/packages/helm/loft/vcluster)
+serviceTree:
+  landscape: &landscape pichu
+  cluster: &cluster opal
+
+tags: &tags
+  atomi.cloud/landscape: *landscape
+  atomi.cloud/cluster: *cluster
+
+auth:
+  name: pichu-root-token
+  remoteName: PICHU_SULFOXIDE_SOS
+  upsyncNamespace: sulfoxide
+
+sulfoxide-bromine:
+  storeName: &storeName doppler-pichu-iodine
+
+datastore:
+  secretStore:
+    name: *storeName
+  name: &k3sDatastoreEndpoint pichu-datastore-endpoint
+  remoteName: PICHU_K3S_DATASTORE_ENDPOINT
+  secretKey: &k3sSecretKey K3S_DATASTORE_ENDPOINT
+
 vcluster:
-
-  sync:
-    configmaps:
-      all: true
-    secrets:
-      all: true
-    ingresses:
-      enabled: true
-    pods:
-      enabled: true
-      ephemeralContainers: true
-      status: true
-    nodes:
-      enabled: true
-      syncAllNodes: true
-      syncNodeChanges: true
-      enableScheduler: true
-      fakeKubeletIPs: false
-  rbac:
-    role:
-      create: true
-  proxy:
-    metricsServer:
-      nodes:
-        enabled: true
-      pods:
-        enabled: true
+  vcluster:
+    env:
+      - name: K3S_DATASTORE_ENDPOINT
+        valueFrom:
+        secretKeyRef:
+          name: *k3sDatastoreEndpoint
+          key: *k3sSecretKey
+  labels:
+    <<: *tags
+  annotations:
+    <<: *tags
+  syncer:
+    extraArgs:
+      - --kube-config-context-name=pichu-opal
+      - --out-kube-config-server=https://pichu.opal.kubernetes.cluster.atomi.cloud
   ingress:
-    enabled: false
-  telemetry:
-    disabled: true
-
-
-
+    host: pichu.opal.kubernetes.cluster.atomi.cloud

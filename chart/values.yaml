@@ -10,6 +10,15 @@ tags: &tags
   atomi.cloud/service: *service
   atomi.cloud/layer: *layer
 
+# -- Create SecretStore via secret of secrets pattern
+sulfoxide-bromine:
+  # -- Store name to create
+  storeName: doppler-boron
+  # -- Secret of Secrets reference
+  rootSecret:
+    # -- DOPPLER Token Reference
+    ref: "SULFOXIDE_IODINE"
+
 # -- Root Doppler token
 auth:
   # -- external secret refresh interval
@@ -34,8 +43,43 @@ auth:
   # -- secret key to store DOPPLER_TOKEN
   secretKey: DOPPLER_TOKEN
 
+# -- K3S state (postgresql) auth
+datastore:
+  # -- external secret refresh interval
+  refreshInterval: 1h
+  # -- Secret store to reference
+  secretStore:
+    # -- name of the secret store to reference
+    name: doppler-iodine
+    # -- kind of the secret store to reference
+    kind: SecretStore
+  policy:
+    # -- External Secret creation policy
+    creation: Owner
+    # -- External Secret deletion policy
+    deletion: Retain
+  # -- name of the secret to be created
+  name: pichu-root-token
+  # -- name of the remote secret name
+  remoteName: PICHU_K3S_DATASTORE_ENDPOINT
+  # -- secret key to store the connection string secret
+  secretKey: K3S_DATASTORE_ENDPOINT
+
 # -- Virtual Cluster Configuration. See [vcluster documentation](https://artifacthub.io/packages/helm/loft/vcluster)
 vcluster:
+  enableHA: true
+  replicas: 3
+  storage:
+    persistence: false
+  coredns:
+    replicas: 3
+  vcluster:
+    env:
+      - name: K3S_DATASTORE_ENDPOINT
+        valueFrom:
+        secretKeyRef:
+          name: pichu-root-token
+          key: K3S_DATASTORE_ENDPOINT
   labels:
     <<: *tags
   annotations:

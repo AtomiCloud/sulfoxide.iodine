@@ -40,6 +40,7 @@ let
           kubectl
           gitlint
           shellcheck
+          skopeo
           ;
         helm = kubernetes-helm;
 

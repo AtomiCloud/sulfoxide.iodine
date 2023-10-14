@@ -1,6 +1,9 @@
 dependencies:
 - name: vcluster
   repository: https://charts.loft.sh
-  version: 0.16.2
-digest: sha256:98b550050b569842f5e54984d27ff11f1ee2840c6e8828bd54c473c534b2c86a
-generated: "2023-10-08T13:03:03.164331+08:00"
+  version: 0.16.3
+- name: sulfoxide-bromine
+  repository: oci://ghcr.io/atomicloud/sulfoxide.bromine
+  version: 1.1.1
+digest: sha256:98b58f99cc66289c9f79105f55266c746cfc0574b1b27ada70da30bc2affcf7b
+generated: "2023-10-13T17:54:39.921913+08:00"

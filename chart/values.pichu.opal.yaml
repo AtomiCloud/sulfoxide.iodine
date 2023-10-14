@@ -11,8 +11,24 @@ auth:
   remoteName: PICHU_SULFOXIDE_SOS
   upsyncNamespace: sulfoxide
 
+sulfoxide-bromine:
+  storeName: &storeName doppler-pichu-iodine
+
+datastore:
+  secretStore:
+    name: *storeName
+  name: &k3sDatastoreEndpoint pichu-datastore-endpoint
+  remoteName: PICHU_K3S_DATASTORE_ENDPOINT
+  secretKey: &k3sSecretKey K3S_DATASTORE_ENDPOINT
 
 vcluster:
+  vcluster:
+    env:
+      - name: K3S_DATASTORE_ENDPOINT
+        valueFrom:
+        secretKeyRef:
+          name: *k3sDatastoreEndpoint
+          key: *k3sSecretKey
   labels:
     <<: *tags
   annotations:
