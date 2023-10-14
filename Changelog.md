@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.5.0...v1.5.1) (2023-10-14)
+
+
+### 🐛 Bug Fixes
+
+* incorrect indent for k3s data store ([bee08db](https://github.com/AtomiCloud/sulfoxide.iodine/commit/bee08dbc31563f3610b23ea8fc5083a15bfd309e))
+
 ## [1.5.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.4.0...v1.5.0) (2023-10-14)
 
 
