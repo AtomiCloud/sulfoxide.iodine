@@ -77,9 +77,9 @@ vcluster:
     env:
       - name: K3S_DATASTORE_ENDPOINT
         valueFrom:
-        secretKeyRef:
-          name: pichu-root-token
-          key: K3S_DATASTORE_ENDPOINT
+          secretKeyRef:
+            name: pichu-root-token
+            key: K3S_DATASTORE_ENDPOINT
   labels:
     <<: *tags
   annotations:
