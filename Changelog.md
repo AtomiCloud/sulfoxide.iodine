@@ -1,3 +1,10 @@
+## [1.6.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.5.2...v1.6.0) (2023-10-15)
+
+
+### 🚀 New Features
+
+* custom K3S token ([67333b0](https://github.com/AtomiCloud/sulfoxide.iodine/commit/67333b0d054aeda26ba28f743838b63b351d53db))
+
 ## [1.5.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.5.1...v1.5.2) (2023-10-15)
 
 
