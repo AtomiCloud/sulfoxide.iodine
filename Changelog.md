@@ -1,3 +1,10 @@
+## [1.8.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.7.1...v1.8.0) (2023-10-15)
+
+
+### 🚀 New Features
+
+* sync OTEL to host ([0c7fc55](https://github.com/AtomiCloud/sulfoxide.iodine/commit/0c7fc55f3381db887d5b645f05c28e20a278d2b9))
+
 ## [1.7.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.7.0...v1.7.1) (2023-10-15)
 
 
