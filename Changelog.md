@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.5.1...v1.5.2) (2023-10-15)
+
+
+### 🐛 Bug Fixes
+
+* missing labels and annotations ([52351b4](https://github.com/AtomiCloud/sulfoxide.iodine/commit/52351b441131f8d937b88336e83d3044d1b7dcd5))
+
 ## [1.5.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.5.0...v1.5.1) (2023-10-14)
 
 
