@@ -95,9 +95,10 @@ vcluster:
     persistence: false
   coredns:
     replicas: 3
-  k3s:
-    serverTokenKey: K3S_TOKEN
-    tokenSecretName: k3s-sync-token
+  serverToken:
+    secretKeyRef:
+      name: k3s-sync-token
+      key: K3S_TOKEN
   vcluster:
     env:
       - name: K3S_DATASTORE_ENDPOINT
