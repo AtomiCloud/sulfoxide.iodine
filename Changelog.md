@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.6.0...v1.6.1) (2023-10-15)
+
+
+### 🐛 Bug Fixes
+
+* migrate to use external K3S token ([ad30747](https://github.com/AtomiCloud/sulfoxide.iodine/commit/ad30747d0154b0df56b3c6e78410890252c28995))
+
 ## [1.6.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.5.2...v1.6.0) (2023-10-15)
 
 
