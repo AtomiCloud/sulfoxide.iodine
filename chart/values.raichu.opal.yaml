@@ -7,28 +7,15 @@ tags: &tags
   atomi.cloud/cluster: *cluster
 
 auth:
-  name: raichu-root-token
   remoteName: RAICHU_SULFOXIDE_SOS
-  upsyncNamespace: sulfoxide
-
-sulfoxide-bromine:
-  storeName: &storeName doppler-raichu-iodine
 
 datastore:
-  secretStore:
-    name: *storeName
-  name: &k3sDatastoreEndpoint raichu-datastore-endpoint
   remoteName: RAICHU_K3S_DATASTORE_ENDPOINT
-  secretKey: &k3sSecretKey K3S_DATASTORE_ENDPOINT
+
+k3sSyncToken:
+  remoteName: RAICHU_K3S_TOKEN
 
 vcluster:
-  vcluster:
-    env:
-      - name: K3S_DATASTORE_ENDPOINT
-        valueFrom:
-          secretKeyRef:
-            name: *k3sDatastoreEndpoint
-            key: *k3sSecretKey
   podLabels:
     <<: *tags
   podAnnotations:

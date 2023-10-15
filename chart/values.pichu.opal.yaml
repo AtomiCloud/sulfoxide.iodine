@@ -12,6 +12,9 @@ auth:
 datastore:
   remoteName: PICHU_K3S_DATASTORE_ENDPOINT
 
+k3sSyncToken:
+  remoteName: PICHU_K3S_TOKEN
+
 vcluster:
   podLabels:
     <<: *tags
