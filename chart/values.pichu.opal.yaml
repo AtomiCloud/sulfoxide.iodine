@@ -29,6 +29,10 @@ vcluster:
           secretKeyRef:
             name: *k3sDatastoreEndpoint
             key: *k3sSecretKey
+  podLabels:
+    <<: *tags
+  podAnnotations:
+    <<: *tags
   labels:
     <<: *tags
   annotations:

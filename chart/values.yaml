@@ -80,6 +80,10 @@ vcluster:
           secretKeyRef:
             name: pichu-root-token
             key: K3S_DATASTORE_ENDPOINT
+  podLabels:
+    <<: *tags
+  podAnnotations:
+    <<: *tags
   labels:
     <<: *tags
   annotations:
