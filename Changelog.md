@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.8.0...v1.8.1) (2023-10-15)
+
+
+### 🐛 Bug Fixes
+
+* module label and annotation ([5a78fc4](https://github.com/AtomiCloud/sulfoxide.iodine/commit/5a78fc449429bc0cc3f4ad9fca06499495e3c19c))
+
 ## [1.8.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.7.1...v1.8.0) (2023-10-15)
 
 
