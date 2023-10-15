@@ -91,10 +91,10 @@ k3sSyncToken:
 vcluster:
   enableHA: true
   replicas: 3
-  storage:
-    persistence: false
   coredns:
     replicas: 3
+  storage:
+    persistence: false
   serverToken:
     secretKeyRef:
       name: k3s-sync-token

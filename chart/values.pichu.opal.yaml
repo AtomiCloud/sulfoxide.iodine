@@ -16,6 +16,9 @@ k3sSyncToken:
   remoteName: PICHU_K3S_TOKEN
 
 vcluster:
+  replicas: 1
+  coredns:
+    replicas: 1
   podLabels:
     <<: *tags
   podAnnotations:
