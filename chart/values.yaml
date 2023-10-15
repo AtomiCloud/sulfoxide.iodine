@@ -99,6 +99,10 @@ vcluster:
     secretKeyRef:
       name: k3s-sync-token
       key: K3S_TOKEN
+  mapServices:
+    fromHost:
+      - from: sulfoxide/entei-silicon-otlp-collector
+        to: sulfoxide/entei-silicon-otlp-collector
   vcluster:
     env:
       - name: K3S_DATASTORE_ENDPOINT
