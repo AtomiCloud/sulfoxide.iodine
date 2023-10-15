@@ -134,9 +134,9 @@ vcluster:
   proxy:
     metricsServer:
       nodes:
-        enabled: true
+        enabled: false
       pods:
-        enabled: true
+        enabled: false
   syncer:
     extraArgs:
       - --tls-san=https://kubernetes.atomi.cloud
