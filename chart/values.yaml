@@ -13,7 +13,7 @@ tags: &tags
 # -- Create SecretStore via secret of secrets pattern
 sulfoxide-bromine:
   # -- Store name to create
-  storeName: doppler-boron
+  storeName: doppler-iodine
   # -- Secret of Secrets reference
   rootSecret:
     # -- DOPPLER Token Reference
@@ -35,11 +35,11 @@ auth:
     # -- External Secret deletion policy
     deletion: Retain
   # -- name of the secret to be created
-  name: pichu-root-token
+  name: root-token
   # -- name of DOPPLER_TOKEN to be stored
   remoteName: PICHU_SULFOXIDE_SOS
   # -- upsync namespace
-  upsyncNamespace: default
+  upsyncNamespace: sulfoxide
   # -- secret key to store DOPPLER_TOKEN
   secretKey: DOPPLER_TOKEN
 
@@ -59,11 +59,33 @@ datastore:
     # -- External Secret deletion policy
     deletion: Retain
   # -- name of the secret to be created
-  name: pichu-root-token
+  name: datastore-endpoint
   # -- name of the remote secret name
   remoteName: PICHU_K3S_DATASTORE_ENDPOINT
   # -- secret key to store the connection string secret
   secretKey: K3S_DATASTORE_ENDPOINT
+
+# -- K3S sync token
+k3sSyncToken:
+  # -- external secret refresh interval
+  refreshInterval: 1h
+  # -- Secret store to reference
+  secretStore:
+    # -- name of the secret store to reference
+    name: doppler-iodine
+    # -- kind of the secret store to reference
+    kind: SecretStore
+  policy:
+    # -- External Secret creation policy
+    creation: Owner
+    # -- External Secret deletion policy
+    deletion: Retain
+  # -- name of the secret to be created
+  name: k3s-sync-token
+  # -- name of the remote secret name
+  remoteName: PIKACHU_K3S_TOKEN
+  # -- secret key to store the connection string secret
+  secretKey: K3S_TOKEN
 
 # -- Virtual Cluster Configuration. See [vcluster documentation](https://artifacthub.io/packages/helm/loft/vcluster)
 vcluster:
@@ -73,12 +95,15 @@ vcluster:
     persistence: false
   coredns:
     replicas: 3
+  k3s:
+    serverTokenKey: K3S_TOKEN
+    tokenSecretName: k3s-sync-token
   vcluster:
     env:
       - name: K3S_DATASTORE_ENDPOINT
         valueFrom:
           secretKeyRef:
-            name: pichu-root-token
+            name: datastore-endpoint
             key: K3S_DATASTORE_ENDPOINT
   podLabels:
     <<: *tags
