@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.6.1...v1.6.2) (2023-10-15)
+
+
+### 🐛 Bug Fixes
+
+* incorrect serverToken config ([c5a64de](https://github.com/AtomiCloud/sulfoxide.iodine/commit/c5a64de4bf9eea424c0f2c1c748acac0e95e9347))
+
 ## [1.6.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.6.0...v1.6.1) (2023-10-15)
 
 
