@@ -1,3 +1,10 @@
+## [1.7.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.6.2...v1.7.0) (2023-10-15)
+
+
+### 🚀 New Features
+
+* remove HA from pichu and pikachu ([3f51f62](https://github.com/AtomiCloud/sulfoxide.iodine/commit/3f51f62eb7b8337f58c8935065303fbc305e4570))
+
 ## [1.6.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.6.1...v1.6.2) (2023-10-15)
 
 
