@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.7.0...v1.7.1) (2023-10-15)
+
+
+### 🐛 Bug Fixes
+
+* stop syncing metrics from host ([cd5a821](https://github.com/AtomiCloud/sulfoxide.iodine/commit/cd5a821c9c36b022f5cd3cd938dbf38f910e0186))
+
 ## [1.7.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.6.2...v1.7.0) (2023-10-15)
 
 
