@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.9.1...v1.9.2) (2023-10-16)
+
+
+### 🐛 Bug Fixes
+
+* custom host for nodes ([f74b78f](https://github.com/AtomiCloud/sulfoxide.iodine/commit/f74b78fae037caef8d2a2bff8946b7580cad4a9c))
+
 ## [1.9.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.9.0...v1.9.1) (2023-10-16)
 
 
