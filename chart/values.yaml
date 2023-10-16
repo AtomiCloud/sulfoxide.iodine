@@ -165,5 +165,28 @@ vcluster:
         labels:
           kubernetes.io/metadata.name: sulfoxide
         name: sulfoxide
+      ---
+      apiVersion: v1
+      kind: ConfigMap
+      metadata:
+        name: coredns-custom
+        namespace: kube-system
+      data:
+        nodehost.server: |
+          node.com:1053 {
+            log
+            reload
+            rewrite name regex (.*)\.node\.com {1}.nodes.vcluster.com
+            forward . 127.0.0.1:1054
+          }
+          .:1054 {
+            log
+            reload
+            hosts /etc/coredns/NodeHosts {
+              ttl 60
+              reload 15s
+              fallthrough
+            }
+          }
 
 
