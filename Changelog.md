@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.9.0...v1.9.1) (2023-10-16)
+
+
+### 🐛 Bug Fixes
+
+* enable fakeKuberletIPs ([f211d72](https://github.com/AtomiCloud/sulfoxide.iodine/commit/f211d72b146c1a68fb5af1882e03668f1f9be9ae))
+
 ## [1.9.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.8.1...v1.9.0) (2023-10-15)
 
 
