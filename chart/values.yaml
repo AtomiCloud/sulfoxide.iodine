@@ -134,7 +134,7 @@ vcluster:
       status: true
     nodes:
       enabled: true
-      fakeKubeletIPs: false
+      fakeKubeletIPs: true
       enableScheduler: true
       syncNodeChanges: true
       syncAllNodes: true
