@@ -116,7 +116,7 @@ k3sSyncToken:
 
 # -- Virtual Cluster Configuration. See [vcluster documentation](https://artifacthub.io/packages/helm/loft/vcluster)
 vcluster:
-  enableHA: false
+  enableHA: true
   replicas: 1
   coredns:
     replicas: 1
@@ -141,14 +141,14 @@ vcluster:
     extraVolumeMounts:
       - mountPath: /etc/certs
         name: datastore-tls
-#    env:
-#      - name: K3S_DATASTORE_ENDPOINT
-#        valueFrom:
-#          secretKeyRef:
-#            name: datastore-endpoint
-#            key: K3S_DATASTORE_ENDPOINT
-#      - name: K3S_DATASTORE_CAFILE
-#        value: /etc/cert.ca
+    env:
+      - name: K3S_DATASTORE_ENDPOINT
+        valueFrom:
+          secretKeyRef:
+            name: datastore-endpoint
+            key: K3S_DATASTORE_ENDPOINT
+      - name: K3S_DATASTORE_CAFILE
+        value: /etc/certs/cert.ca
   podLabels:
     <<: *tags
   podAnnotations:
