@@ -129,7 +129,7 @@ vcluster:
   mapServices:
     fromHost:
       - from: sulfoxide/entei-silicon-otlp-collector
-        to: sulfoxide/entei-silicon-otlp-collector
+        to: sulfoxide/silicon-otlp-collector
   volumes:
     - name: datastore-tls
       secret:
