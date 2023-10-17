@@ -1,3 +1,10 @@
+## [1.10.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.9.2...v1.10.0) (2023-10-17)
+
+
+### 🚀 New Features
+
+* change vcluster OTLP service to exclude entei ([9ca719f](https://github.com/AtomiCloud/sulfoxide.iodine/commit/9ca719f01041e24265178e8c0cb70d365d3ccfbd))
+
 ## [1.9.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.9.1...v1.9.2) (2023-10-16)
 
 
