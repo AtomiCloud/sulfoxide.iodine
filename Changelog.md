@@ -1,3 +1,10 @@
+## [1.11.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.10.0...v1.11.0) (2023-10-17)
+
+
+### 🚀 New Features
+
+* migrate to new CNAME system ([81d18e1](https://github.com/AtomiCloud/sulfoxide.iodine/commit/81d18e1a5c7ef203ea454d61466e2ab34559d8f2))
+
 ## [1.10.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.9.2...v1.10.0) (2023-10-17)
 
 
