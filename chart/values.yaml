@@ -89,8 +89,8 @@ datastoreCa:
   name: datastore-ca
   # -- name of the remote secret name
   remoteName: PICHU_OPAL_K3S_DATASTORE_CA
-  # -- secret key to store the connection string secret
-  secretKey: K3S_DATASTORE_ENDPOINT
+  # -- secret key to store the certificate authority
+  secretKey: K3S_DATASTORE_CAFILE
 
 # -- K3S sync token
 k3sSyncToken:
@@ -137,6 +137,11 @@ vcluster:
           secretKeyRef:
             name: datastore-endpoint
             key: K3S_DATASTORE_ENDPOINT
+      - name: K3S_DATASTORE_CAFILE
+        valueFrom:
+          secretKeyRef:
+            name: datastore-ca
+            key: K3S_DATASTORE_CAFILE
   podLabels:
     <<: *tags
   podAnnotations:
