@@ -130,7 +130,17 @@ vcluster:
     fromHost:
       - from: sulfoxide/entei-silicon-otlp-collector
         to: sulfoxide/entei-silicon-otlp-collector
+  volumes:
+    - name: datastore-tls
+      secret:
+        secretName: datastore-ca
+        items:
+          - key: K3S_DATASTORE_CAFILE
+            path: cert.ca
   vcluster:
+    extraVolumeMounts:
+      - mountPath: /etc
+        name: datastore-tls
     env:
       - name: K3S_DATASTORE_ENDPOINT
         valueFrom:
@@ -138,10 +148,7 @@ vcluster:
             name: datastore-endpoint
             key: K3S_DATASTORE_ENDPOINT
       - name: K3S_DATASTORE_CAFILE
-        valueFrom:
-          secretKeyRef:
-            name: datastore-ca
-            key: K3S_DATASTORE_CAFILE
+        value: /etc/cert.ca
   podLabels:
     <<: *tags
   podAnnotations:
