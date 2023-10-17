@@ -10,7 +10,11 @@ auth:
   remoteName: PIKACHU_SULFOXIDE_SOS
 
 datastore:
-  remoteName: PIKACHU_K3S_DATASTORE_ENDPOINT
+  remoteName: PIKACHU_OPAL_K3S_DATASTORE_ENDPOINT
+
+datastoreCa:
+  enable: true
+  remoteName: PIKACHU_OPAL_K3S_DATASTORE_CA
 
 k3sSyncToken:
   remoteName: PIKACHU_K3S_TOKEN

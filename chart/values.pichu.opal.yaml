@@ -10,7 +10,11 @@ auth:
   remoteName: PICHU_SULFOXIDE_SOS
 
 datastore:
-  remoteName: PICHU_K3S_DATASTORE_ENDPOINT
+  remoteName: PICHU_OPAL_K3S_DATASTORE_ENDPOINT
+
+datastoreCa:
+  enable: true
+  remoteName: PICHU_OPAL_K3S_DATASTORE_CA
 
 k3sSyncToken:
   remoteName: PICHU_K3S_TOKEN

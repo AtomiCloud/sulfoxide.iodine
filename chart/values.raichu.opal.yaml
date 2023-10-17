@@ -10,10 +10,16 @@ auth:
   remoteName: RAICHU_SULFOXIDE_SOS
 
 datastore:
-  remoteName: RAICHU_K3S_DATASTORE_ENDPOINT
+  remoteName: RAICHU_OPAL_K3S_DATASTORE_ENDPOINT
+
+datastoreCa:
+  enable: true
+  remoteName: RAICHU_OPAL_K3S_DATASTORE_CA
 
 k3sSyncToken:
   remoteName: RAICHU_K3S_TOKEN
+
+
 
 vcluster:
   podLabels:

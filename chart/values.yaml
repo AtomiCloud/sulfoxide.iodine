@@ -64,7 +64,31 @@ datastore:
   # -- name of the secret to be created
   name: datastore-endpoint
   # -- name of the remote secret name
-  remoteName: PICHU_K3S_DATASTORE_ENDPOINT
+  remoteName: PICHU_OPAL_K3S_DATASTORE_ENDPOINT
+  # -- secret key to store the connection string secret
+  secretKey: K3S_DATASTORE_ENDPOINT
+
+# -- K3S state (postgresql) Certificate Authority
+datastoreCa:
+  # -- Attempt to obtain datastore's certificate authority
+  enable: true
+  # -- external secret refresh interval
+  refreshInterval: 1h
+  # -- Secret store to reference
+  secretStore:
+    # -- name of the secret store to reference
+    name: doppler-iodine
+    # -- kind of the secret store to reference
+    kind: SecretStore
+  policy:
+    # -- External Secret creation policy
+    creation: Owner
+    # -- External Secret deletion policy
+    deletion: Retain
+  # -- name of the secret to be created
+  name: datastore-ca
+  # -- name of the remote secret name
+  remoteName: PICHU_OPAL_K3S_DATASTORE_CA
   # -- secret key to store the connection string secret
   secretKey: K3S_DATASTORE_ENDPOINT
 
@@ -165,28 +189,5 @@ vcluster:
         labels:
           kubernetes.io/metadata.name: sulfoxide
         name: sulfoxide
-      ---
-      apiVersion: v1
-      kind: ConfigMap
-      metadata:
-        name: coredns-custom
-        namespace: kube-system
-      data:
-        nodehost.server: |
-          node.com:1053 {
-            log
-            reload
-            rewrite name regex (.*)\.node\.com {1}.nodes.vcluster.com
-            forward . 127.0.0.1:1054
-          }
-          .:1054 {
-            log
-            reload
-            hosts /etc/coredns/NodeHosts {
-              ttl 60
-              reload 15s
-              fallthrough
-            }
-          }
 
 
