@@ -1,3 +1,10 @@
+## [1.13.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.12.0...v1.13.0) (2023-10-20)
+
+
+### 📦 Upstreams Changes
+
+* **bromine:** 1.2.3 ([2be7a14](https://github.com/AtomiCloud/sulfoxide.iodine/commit/2be7a14d54640ba7b45d7d3b9073e5583489c82e))
+
 ## [1.12.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.11.0...v1.12.0) (2023-10-20)
 
 
