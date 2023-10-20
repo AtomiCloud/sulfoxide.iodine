@@ -9,5 +9,5 @@ dependencies:
     version: v0.16.3
     repository: https://charts.loft.sh
   - name: sulfoxide-bromine
-    version: 1.1.1
+    version: 1.2.2
     repository: oci://ghcr.io/atomicloud/sulfoxide.bromine

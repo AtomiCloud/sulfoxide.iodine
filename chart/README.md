@@ -9,7 +9,7 @@ Helm chart to install virtual cluster on a physical cluster
 | Repository | Name | Version |
 |------------|------|---------|
 | https://charts.loft.sh | vcluster | v0.16.3 |
-| oci://ghcr.io/atomicloud/sulfoxide.bromine | sulfoxide-bromine | 1.1.1 |
+| oci://ghcr.io/atomicloud/sulfoxide.bromine | sulfoxide-bromine | 1.2.2 |
 
 ## Values
 
@@ -58,7 +58,7 @@ Helm chart to install virtual cluster on a physical cluster
 | k3sSyncToken.secretStore.kind | string | `"SecretStore"` | kind of the secret store to reference |
 | k3sSyncToken.secretStore.name | string | `"doppler-iodine"` | name of the secret store to reference |
 | serviceTree | object | `{"layer":"1","module":"apiserver","platform":"sulfoxide","service":"iodine"}` | AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb) |
-| sulfoxide-bromine | object | `{"rootSecret":{"ref":"SULFOXIDE_IODINE"},"storeName":"doppler-iodine"}` | Create SecretStore via secret of secrets pattern |
+| sulfoxide-bromine | object | `{"annotations":{"helm.sh/hook":"pre-install,pre-upgrade","helm.sh/hook-weight":"-5"},"rootSecret":{"ref":"SULFOXIDE_IODINE"},"storeName":"doppler-iodine"}` | Create SecretStore via secret of secrets pattern |
 | sulfoxide-bromine.rootSecret | object | `{"ref":"SULFOXIDE_IODINE"}` | Secret of Secrets reference |
 | sulfoxide-bromine.rootSecret.ref | string | `"SULFOXIDE_IODINE"` | DOPPLER Token Reference |
 | sulfoxide-bromine.storeName | string | `"doppler-iodine"` | Store name to create |
