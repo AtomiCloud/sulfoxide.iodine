@@ -8,7 +8,7 @@ Helm chart to install virtual cluster on a physical cluster
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.loft.sh | vcluster | v0.16.3 |
+| https://charts.loft.sh | vcluster | v0.16.4 |
 | oci://ghcr.io/atomicloud/sulfoxide.bromine | sulfoxide-bromine | 1.2.3 |
 
 ## Values
