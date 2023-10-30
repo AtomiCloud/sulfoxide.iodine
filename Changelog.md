@@ -1,3 +1,10 @@
+## [1.14.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.13.0...v1.14.0) (2023-10-30)
+
+
+### 📦 Upstreams Changes
+
+* **vclsuter:** update to 0.16.4 ([132f664](https://github.com/AtomiCloud/sulfoxide.iodine/commit/132f664cb69f4c20eeec5a0312bb6633ad915dec))
+
 ## [1.13.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.12.0...v1.13.0) (2023-10-20)
 
 
