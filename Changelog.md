@@ -1,3 +1,10 @@
+## [1.15.3](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.15.2...v1.15.3) (2023-11-18)
+
+
+### 🐛 Bug Fixes
+
+* incorrect indentation in values file ([0ba7062](https://github.com/AtomiCloud/sulfoxide.iodine/commit/0ba70626c14b8048c0a04bb5e8716af990e27d4d))
+
 ## [1.15.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.15.1...v1.15.2) (2023-11-18)
 
 
