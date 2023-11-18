@@ -1,3 +1,10 @@
+## [1.15.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.14.0...v1.15.0) (2023-11-18)
+
+
+### 🚀 New Features
+
+* ruby values ([1c3709b](https://github.com/AtomiCloud/sulfoxide.iodine/commit/1c3709b7aca89152832cabb7d3ecd9bd33cebb15))
+
 ## [1.14.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.13.0...v1.14.0) (2023-10-30)
 
 
