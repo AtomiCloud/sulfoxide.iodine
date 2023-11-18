@@ -16,7 +16,7 @@ tags: &tags
 # -- Create SecretStore via secret of secrets pattern
 sulfoxide-bromine:
   annotations:
-  argocd.argoproj.io/sync-wave: "-4"
+  argocd.argoproj.io/sync-wave: "-5"
   # -- Store name to create
   storeName: doppler-iodine
   # -- Secret of Secrets reference

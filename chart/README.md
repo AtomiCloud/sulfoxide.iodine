@@ -59,7 +59,7 @@ Helm chart to install virtual cluster on a physical cluster
 | k3sSyncToken.secretStore.name | string | `"doppler-iodine"` | name of the secret store to reference |
 | secretAnnotation | object | `{"argocd.argoproj.io/sync-wave":"-3"}` | Secret Annotations (External Secrets) to control synchronization |
 | serviceTree | object | `{"layer":"1","module":"apiserver","platform":"sulfoxide","service":"iodine"}` | AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb) |
-| sulfoxide-bromine | object | `{"annotations":null,"argocd.argoproj.io/sync-wave":"-4","rootSecret":{"ref":"SULFOXIDE_IODINE"},"storeName":"doppler-iodine"}` | Create SecretStore via secret of secrets pattern |
+| sulfoxide-bromine | object | `{"annotations":null,"argocd.argoproj.io/sync-wave":"-5","rootSecret":{"ref":"SULFOXIDE_IODINE"},"storeName":"doppler-iodine"}` | Create SecretStore via secret of secrets pattern |
 | sulfoxide-bromine.rootSecret | object | `{"ref":"SULFOXIDE_IODINE"}` | Secret of Secrets reference |
 | sulfoxide-bromine.rootSecret.ref | string | `"SULFOXIDE_IODINE"` | DOPPLER Token Reference |
 | sulfoxide-bromine.storeName | string | `"doppler-iodine"` | Store name to create |
