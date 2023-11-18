@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.15.0...v1.15.1) (2023-11-18)
+
+
+### 🐛 Bug Fixes
+
+* sync wave for secretstore externalsecret ([b5413c4](https://github.com/AtomiCloud/sulfoxide.iodine/commit/b5413c47b6b5431c9a8edf55668c9505bb87e130))
+
 ## [1.15.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.14.0...v1.15.0) (2023-11-18)
 
 
