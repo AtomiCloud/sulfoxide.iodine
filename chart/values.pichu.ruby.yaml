@@ -1,0 +1,39 @@
+serviceTree:
+  landscape: &landscape pichu
+  cluster: &cluster ruby
+
+tags: &tags
+  atomi.cloud/landscape: *landscape
+  atomi.cloud/cluster: *cluster
+
+auth:
+  remoteName: PICHU_SULFOXIDE_SOS
+
+datastore:
+  remoteName: PICHU_RUBY_K3S_DATASTORE_ENDPOINT
+
+datastoreCa:
+  enable: true
+  remoteName: PICHU_RUBY_K3S_DATASTORE_CA
+
+k3sSyncToken:
+  remoteName: PICHU_K3S_TOKEN
+
+vcluster:
+  replicas: 1
+  coredns:
+    replicas: 1
+  podLabels:
+    <<: *tags
+  podAnnotations:
+    <<: *tags
+  labels:
+    <<: *tags
+  annotations:
+    <<: *tags
+  syncer:
+    extraArgs:
+      - --kube-config-context-name=pichu-ruby
+      - --out-kube-config-server=https://pichu.ruby.kubernetes.atomi.cloud
+  ingress:
+    host: pichu.ruby.kubernetes.atomi.cloud

@@ -1,0 +1,38 @@
+serviceTree:
+  landscape: &landscape raichu
+  cluster: &cluster ruby
+
+tags: &tags
+  atomi.cloud/landscape: *landscape
+  atomi.cloud/cluster: *cluster
+
+auth:
+  remoteName: RAICHU_SULFOXIDE_SOS
+
+datastore:
+  remoteName: RAICHU_RUBY_K3S_DATASTORE_ENDPOINT
+
+datastoreCa:
+  enable: true
+  remoteName: RAICHU_RUBY_K3S_DATASTORE_CA
+
+k3sSyncToken:
+  remoteName: RAICHU_K3S_TOKEN
+
+
+
+vcluster:
+  podLabels:
+    <<: *tags
+  podAnnotations:
+    <<: *tags
+  labels:
+    <<: *tags
+  annotations:
+    <<: *tags
+  syncer:
+    extraArgs:
+      - --kube-config-context-name=raichu-ruby
+      - --out-kube-config-server=https://raichu.ruby.kubernetes.atomi.cloud
+  ingress:
+    host: raichu.ruby.kubernetes.atomi.cloud
