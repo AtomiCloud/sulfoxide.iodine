@@ -1,3 +1,10 @@
+## [1.15.4](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.15.3...v1.15.4) (2023-11-18)
+
+
+### 🐛 Bug Fixes
+
+* missing annotation ([86c7b0e](https://github.com/AtomiCloud/sulfoxide.iodine/commit/86c7b0e044d542fed01ffa351c450b8f8f7d24c2))
+
 ## [1.15.3](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.15.2...v1.15.3) (2023-11-18)
 
 
