@@ -1,6 +1,6 @@
 # sulfoxide-iodine
 
-![Version: 1.15.1](https://img.shields.io/badge/Version-1.15.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.16.3](https://img.shields.io/badge/AppVersion-v0.16.3-informational?style=flat-square)
+![Version: 1.15.2](https://img.shields.io/badge/Version-1.15.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.16.3](https://img.shields.io/badge/AppVersion-v0.16.3-informational?style=flat-square)
 
 Helm chart to install virtual cluster on a physical cluster
 

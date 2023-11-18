@@ -1,3 +1,10 @@
+## [1.15.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.15.1...v1.15.2) (2023-11-18)
+
+
+### 🐛 Bug Fixes
+
+* increase sync wave diff ([58bb087](https://github.com/AtomiCloud/sulfoxide.iodine/commit/58bb087abba4938e48f73f6cbd12a2c43370906b))
+
 ## [1.15.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.15.0...v1.15.1) (2023-11-18)
 
 
