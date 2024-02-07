@@ -2,7 +2,7 @@
 serviceTree:
   platform: &platform sulfoxide
   service: &service iodine
-  module: &module apiserver
+
   layer: &layer "1"
 
 
@@ -11,7 +11,6 @@ tags: &tags
   atomi.cloud/platform: *platform
   atomi.cloud/service: *service
   atomi.cloud/layer: *layer
-  atomi.cloud/module: *module
 
 # -- Create SecretStore via secret of secrets pattern
 sulfoxide-bromine:
@@ -54,6 +53,8 @@ auth:
 
 # -- K3S state (postgresql) auth
 datastore:
+  # -- Attempt to obtain datastore's connection string
+  enable: true
   # -- external secret refresh interval
   refreshInterval: 1h
   # -- Secret store to reference
@@ -136,33 +137,18 @@ vcluster:
     fromHost:
       - from: sulfoxide/entei-silicon-otlp-collector
         to: sulfoxide/silicon-otlp-collector
-  volumes:
-    - name: datastore-tls
-      secret:
-        secretName: datastore-ca
-        items:
-          - key: K3S_DATASTORE_CAFILE
-            path: cert.ca
-  vcluster:
-    extraVolumeMounts:
-      - mountPath: /etc/certs
-        name: datastore-tls
-    env:
-      - name: K3S_DATASTORE_ENDPOINT
-        valueFrom:
-          secretKeyRef:
-            name: datastore-endpoint
-            key: K3S_DATASTORE_ENDPOINT
-      - name: K3S_DATASTORE_CAFILE
-        value: /etc/certs/cert.ca
   podLabels:
     <<: *tags
+    atomi.cloud/module: apiserver
   podAnnotations:
     <<: *tags
+    atomi.cloud/module: apiserver
   labels:
     <<: *tags
+    atomi.cloud/module: apiserver
   annotations:
     <<: *tags
+    atomi.cloud/module: apiserver
   sync:
     configmaps:
       all: true
@@ -207,5 +193,31 @@ vcluster:
         labels:
           kubernetes.io/metadata.name: sulfoxide
         name: sulfoxide
+
+# -- ETCD Cluster configuration. See [etcd documentation](https://artifacthub.io/packages/helm/bitnami/etcd)
+etcd:
+  commonLabels:
+    <<: *tags
+    atomi.cloud/module: etcd
+  podLabels:
+    <<: *tags
+    atomi.cloud/module: etcd
+  commonAnnotations:
+    <<: *tags
+    atomi.cloud/module: etcd
+  podAnnotations:
+    <<: *tags
+    atomi.cloud/module: etcd
+  topologySpreadConstraints:
+    - maxSkew: 1
+      topologyKey: topology.kubernetes.io/zone
+      whenUnsatisfiable: ScheduleAnyway
+      labelSelector:
+        matchLabels:
+          <<: *tags
+          atomi.cloud/module: etcd
+  persistence:
+    enabled: false
+  replicaCount: 3
 
 

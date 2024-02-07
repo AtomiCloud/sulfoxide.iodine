@@ -65,3 +65,5 @@ tasks:
           CHART_NAME: vcluster
       - >-
         echo "sulfoxide-bromine: $(skopeo list-tags docker://ghcr.io/atomicloud/sulfoxide.bromine/sulfoxide-bromine | jq -r '.Tags[]' | sort -V | tail -n 1)"
+      - >-
+        echo "ectd: $(skopeo list-tags docker://registry-1.docker.io/bitnamicharts/etcd | jq -r '.Tags[]' | sort -V | tail -n 1)"

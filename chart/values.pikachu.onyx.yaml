@@ -1,0 +1,60 @@
+serviceTree:
+  landscape: &landscape pikachu
+  cluster: &cluster onyx
+
+tags: &tags
+  atomi.cloud/landscape: *landscape
+  atomi.cloud/cluster: *cluster
+
+auth:
+  remoteName: PIKACHU_SULFOXIDE_SOS
+
+datastore:
+  enable: false
+
+datastoreCa:
+  enable: false
+
+k3sSyncToken:
+  remoteName: PIKACHU_K3S_TOKEN
+
+etcd:
+  enabled: true
+  commonLabels:
+    <<: *tags
+  podLabels:
+    <<: *tags
+  commonAnnotations:
+    <<: *tags
+  podAnnotations:
+    <<: *tags
+  persistence:
+    enabled: true
+    accessModes: [ "ReadWriteOnce" ]
+    storageClass: "ebs"
+  replicaCount: 3
+  fullnameOverride: iodine-etcd
+vcluster:
+  replicas: 1
+  coredns:
+    replicas: 1
+  podLabels:
+    <<: *tags
+  podAnnotations:
+    <<: *tags
+  labels:
+    <<: *tags
+  annotations:
+    <<: *tags
+  syncer:
+    extraArgs:
+      - --kube-config-context-name=pikachu-onyx
+      - --out-kube-config-server=https://pikachu.onyx.kubernetes.atomi.cloud
+  ingress:
+    host: pikachu.onyx.kubernetes.atomi.cloud
+  vcluster:
+    env:
+      - name: K3S_DATASTORE_ENDPOINT
+        value: http://iodine-etcd:2379
+
+

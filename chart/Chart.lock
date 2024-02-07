@@ -1,9 +1,12 @@
 dependencies:
 - name: vcluster
   repository: https://charts.loft.sh
-  version: 0.16.4
+  version: 0.18.1
 - name: sulfoxide-bromine
   repository: oci://ghcr.io/atomicloud/sulfoxide.bromine
   version: 1.2.3
-digest: sha256:99b16ceb516f4d4c0c2adc361b09aeb813374f898101002682470878f6d94923
-generated: "2023-10-30T10:10:16.308216+08:00"
+- name: etcd
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 9.10.5
+digest: sha256:3bcdad6f9965955280ab5113f5711fcc335c7c1ca81b6fcb5b58c018c6e37c9b
+generated: "2024-02-06T20:59:04.025595+08:00"

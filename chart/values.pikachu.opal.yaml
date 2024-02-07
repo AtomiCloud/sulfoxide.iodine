@@ -10,6 +10,7 @@ auth:
   remoteName: PIKACHU_SULFOXIDE_SOS
 
 datastore:
+  enable: true
   remoteName: PIKACHU_OPAL_K3S_DATASTORE_ENDPOINT
 
 datastoreCa:
@@ -18,6 +19,9 @@ datastoreCa:
 
 k3sSyncToken:
   remoteName: PIKACHU_K3S_TOKEN
+
+etcd:
+  enabled: false
 
 vcluster:
   replicas: 1
@@ -37,3 +41,23 @@ vcluster:
       - --out-kube-config-server=https://pikachu.opal.kubernetes.atomi.cloud
   ingress:
     host: pikachu.opal.kubernetes.atomi.cloud
+
+  volumes:
+    - name: datastore-tls
+      secret:
+        secretName: datastore-ca
+        items:
+          - key: K3S_DATASTORE_CAFILE
+            path: cert.ca
+  vcluster:
+    extraVolumeMounts:
+      - mountPath: /etc/certs
+        name: datastore-tls
+    env:
+      - name: K3S_DATASTORE_ENDPOINT
+        valueFrom:
+          secretKeyRef:
+            name: datastore-endpoint
+            key: K3S_DATASTORE_ENDPOINT
+      - name: K3S_DATASTORE_CAFILE
+        value: /etc/certs/cert.ca
