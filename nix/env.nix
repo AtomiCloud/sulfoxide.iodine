@@ -21,10 +21,7 @@ with packages;
   ];
 
   main = [
-    vcluster
-    skopeo
   ];
-
 
   lint = [
     # core
@@ -37,7 +34,6 @@ with packages;
   ];
 
   releaser = [
-    nodejs_20
     sg
   ];
 }
