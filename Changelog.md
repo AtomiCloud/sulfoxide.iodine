@@ -1,3 +1,15 @@
+## [1.16.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.15.4...v1.16.0) (2024-02-08)
+
+
+### 🚀 New Features
+
+* onyx clusters ([7cfda22](https://github.com/AtomiCloud/sulfoxide.iodine/commit/7cfda22be43e2acb5834dfc459bb6e18f21494a9))
+
+
+### 🐛 Bug Fixes
+
+* releaser ([83ba80c](https://github.com/AtomiCloud/sulfoxide.iodine/commit/83ba80c5deef99dc1bd4dac1e3d01b467aa4794d))
+
 ## [1.15.4](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.15.3...v1.15.4) (2023-11-18)
 
 
