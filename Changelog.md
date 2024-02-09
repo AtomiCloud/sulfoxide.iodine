@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.0...v1.16.1) (2024-02-09)
+
+
+### 🐛 Bug Fixes
+
+* missing skopeo ([2fa439d](https://github.com/AtomiCloud/sulfoxide.iodine/commit/2fa439d21fee89f87e125f256ee6bc0d02b50305))
+
 ## [1.16.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.15.4...v1.16.0) (2024-02-08)
 
 
