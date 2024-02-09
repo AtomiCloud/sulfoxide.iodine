@@ -21,6 +21,7 @@ let
           git
           jq
           yq-go
+          skopeo
 
           # lint
           treefmt
