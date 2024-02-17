@@ -197,6 +197,7 @@ vcluster:
 # -- ETCD Cluster configuration. See [etcd documentation](https://artifacthub.io/packages/helm/bitnami/etcd)
 etcd:
   removeMemberOnContainerTermination: false
+  initialClusterState: existing
   commonLabels:
     <<: *tags
     atomi.cloud/module: etcd
