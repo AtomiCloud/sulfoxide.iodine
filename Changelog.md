@@ -1,3 +1,10 @@
+## [1.16.3](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.2...v1.16.3) (2024-02-17)
+
+
+### 🐛 Bug Fixes
+
+* use 6 replicas to prevent spread-constraint from being wrong ([48862b6](https://github.com/AtomiCloud/sulfoxide.iodine/commit/48862b61d69ebfddf59af5322176ae698c253e6c))
+
 ## [1.16.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.1...v1.16.2) (2024-02-17)
 
 
