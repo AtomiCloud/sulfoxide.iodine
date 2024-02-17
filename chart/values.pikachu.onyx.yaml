@@ -31,7 +31,7 @@ etcd:
   persistence:
     enabled: true
     accessModes: [ "ReadWriteOnce" ]
-    storageClass: "ebs"
+    storageClass: "ebs-gp3"
   replicaCount: 3
   fullnameOverride: iodine-etcd
 vcluster:
