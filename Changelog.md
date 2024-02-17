@@ -1,3 +1,10 @@
+## [1.16.8](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.7...v1.16.8) (2024-02-17)
+
+
+### 🐛 Bug Fixes
+
+* attempt to set as existing ([533490c](https://github.com/AtomiCloud/sulfoxide.iodine/commit/533490c946aee9e860ddf9d08664930a48b6c392))
+
 ## [1.16.7](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.6...v1.16.7) (2024-02-17)
 
 
