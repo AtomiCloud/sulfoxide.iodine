@@ -1,3 +1,10 @@
+## [1.16.7](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.6...v1.16.7) (2024-02-17)
+
+
+### 🐛 Bug Fixes
+
+* etcd HA by disabling removeMemberOnContainerTermination ([cd5c876](https://github.com/AtomiCloud/sulfoxide.iodine/commit/cd5c876d52348dea352831cb86f8afcf1384f597))
+
 ## [1.16.6](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.5...v1.16.6) (2024-02-17)
 
 
