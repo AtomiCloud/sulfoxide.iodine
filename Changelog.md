@@ -1,3 +1,10 @@
+## [1.16.5](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.4...v1.16.5) (2024-02-17)
+
+
+### 🐛 Bug Fixes
+
+* remove minDomains ([73a63ab](https://github.com/AtomiCloud/sulfoxide.iodine/commit/73a63ab953f6e8818dc437e13b9836ec91d979c5))
+
 ## [1.16.4](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.3...v1.16.4) (2024-02-17)
 
 
