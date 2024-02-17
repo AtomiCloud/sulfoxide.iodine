@@ -32,7 +32,7 @@ etcd:
     enabled: true
     accessModes: [ "ReadWriteOnce" ]
     storageClass: "ebs-gp3"
-  replicaCount: 6
+  replicaCount: 3
   resources:
     requests:
       cpu: 125m

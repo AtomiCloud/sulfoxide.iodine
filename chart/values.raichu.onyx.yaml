@@ -32,12 +32,12 @@ etcd:
     enabled: true
     accessModes: [ "ReadWriteOnce" ]
     storageClass: "ebs-gp3"
-  replicaCount: 3
+  replicaCount: 6
   fullnameOverride: iodine-etcd
 vcluster:
-  replicas: 1
+  replicas: 3
   coredns:
-    replicas: 1
+    replicas: 3
   podLabels:
     <<: *tags
   podAnnotations:

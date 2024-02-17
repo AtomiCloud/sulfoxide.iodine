@@ -32,9 +32,13 @@ etcd:
     enabled: true
     accessModes: [ "ReadWriteOnce" ]
     storageClass: "ebs-gp3"
-  replicaCount: 3
+  replicaCount: 1
+  nodeSelector:
+    topology.kubernetes.io/zone: "ap-southeast-1b"
   fullnameOverride: iodine-etcd
 vcluster:
+  nodeSelector:
+    topology.kubernetes.io/zone: "ap-southeast-1c"
   replicas: 1
   coredns:
     replicas: 1

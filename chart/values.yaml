@@ -211,6 +211,7 @@ etcd:
   topologySpreadConstraints:
     - maxSkew: 1
       topologyKey: topology.kubernetes.io/zone
+      minDomains: 3
       whenUnsatisfiable: ScheduleAnyway
       labelSelector:
         matchLabels:
@@ -218,6 +219,6 @@ etcd:
           atomi.cloud/module: etcd
   persistence:
     enabled: false
-  replicaCount: 6
+  replicaCount: 3
 
 
