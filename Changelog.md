@@ -1,3 +1,10 @@
+## [1.16.4](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.3...v1.16.4) (2024-02-17)
+
+
+### 🐛 Bug Fixes
+
+* attempt to use minDomains for topo spread ([8b17f37](https://github.com/AtomiCloud/sulfoxide.iodine/commit/8b17f371d14beb78e13c27aa702488eed112c767))
+
 ## [1.16.3](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.2...v1.16.3) (2024-02-17)
 
 
