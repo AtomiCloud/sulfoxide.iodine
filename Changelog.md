@@ -1,3 +1,10 @@
+## [1.16.6](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.5...v1.16.6) (2024-02-17)
+
+
+### 🐛 Bug Fixes
+
+* use multi-pod dns for etcd ([5ab976a](https://github.com/AtomiCloud/sulfoxide.iodine/commit/5ab976a33645e4adad26910a73a9ba6150c1364a))
+
 ## [1.16.5](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.4...v1.16.5) (2024-02-17)
 
 
