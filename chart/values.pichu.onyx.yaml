@@ -32,7 +32,14 @@ etcd:
     enabled: true
     accessModes: [ "ReadWriteOnce" ]
     storageClass: "ebs-gp3"
-  replicaCount: 3
+  replicaCount: 6
+  resources:
+    requests:
+      cpu: 125m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
   fullnameOverride: iodine-etcd
 vcluster:
   replicas: 1

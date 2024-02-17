@@ -218,6 +218,6 @@ etcd:
           atomi.cloud/module: etcd
   persistence:
     enabled: false
-  replicaCount: 3
+  replicaCount: 6
 
 
