@@ -43,6 +43,11 @@ etcd:
       memory: 512Mi
   fullnameOverride: iodine-etcd
 vcluster:
+  nodeSelector:
+    topology.kubernetes.io/zone: ap-southeast-1a
+  storage:
+    persistence: true
+    className: ebs-gp3
   replicas: 1
   coredns:
     replicas: 1
