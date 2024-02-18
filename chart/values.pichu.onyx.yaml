@@ -42,6 +42,7 @@ etcd:
       cpu: 500m
       memory: 512Mi
   fullnameOverride: iodine-etcd
+
 vcluster:
   nodeSelector:
     topology.kubernetes.io/zone: ap-southeast-1a
@@ -65,9 +66,9 @@ vcluster:
       - --out-kube-config-server=https://pichu.onyx.kubernetes.atomi.cloud
   ingress:
     host: pichu.onyx.kubernetes.atomi.cloud
-  vcluster:
-    env:
-      - name: K3S_DATASTORE_ENDPOINT
-        value: http://iodine-etcd:2379
+#  vcluster:
+#    env:
+#      - name: K3S_DATASTORE_ENDPOINT
+#        value: http://iodine-etcd:2379
 
 
