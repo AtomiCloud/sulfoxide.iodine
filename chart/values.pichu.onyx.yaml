@@ -28,6 +28,7 @@ etcd:
     <<: *tags
   podAnnotations:
     <<: *tags
+    atomi.cloud/managed-by: argocd
   persistence:
     enabled: true
     accessModes: [ "ReadWriteOnce" ]
@@ -40,7 +41,6 @@ etcd:
     limits:
       cpu: 500m
       memory: 512Mi
-
   fullnameOverride: iodine-etcd
 vcluster:
   replicas: 1
