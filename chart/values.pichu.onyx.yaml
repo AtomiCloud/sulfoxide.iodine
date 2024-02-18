@@ -63,6 +63,6 @@ vcluster:
   vcluster:
     env:
       - name: K3S_DATASTORE_ENDPOINT
-        value: http://iodine-etcd-0:2379,http://iodine-etcd-1:2379,http://iodine-etcd-2:2379
+        value: http://iodine-etcd:2379
 
 
