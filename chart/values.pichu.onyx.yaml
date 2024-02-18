@@ -49,23 +49,23 @@ vcluster:
   storage:
     persistence: true
     className: ebs-gp3
-  replicas: 1
-  coredns:
-    replicas: 1
-  podLabels:
-    <<: *tags
-  podAnnotations:
-    <<: *tags
-  labels:
-    <<: *tags
-  annotations:
-    <<: *tags
-  syncer:
-    extraArgs:
-      - --kube-config-context-name=pichu-onyx
-      - --out-kube-config-server=https://pichu.onyx.kubernetes.atomi.cloud
-  ingress:
-    host: pichu.onyx.kubernetes.atomi.cloud
+#  replicas: 1
+#  coredns:
+#    replicas: 1
+#  podLabels:
+#    <<: *tags
+#  podAnnotations:
+#    <<: *tags
+#  labels:
+#    <<: *tags
+#  annotations:
+#    <<: *tags
+#  syncer:
+#    extraArgs:
+#      - --kube-config-context-name=pichu-onyx
+#      - --out-kube-config-server=https://pichu.onyx.kubernetes.atomi.cloud
+#  ingress:
+#    host: pichu.onyx.kubernetes.atomi.cloud
 #  vcluster:
 #    env:
 #      - name: K3S_DATASTORE_ENDPOINT

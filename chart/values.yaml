@@ -122,76 +122,76 @@ k3sSyncToken:
 
 # -- Virtual Cluster Configuration. See [vcluster documentation](https://artifacthub.io/packages/helm/loft/vcluster)
 vcluster:
-  enableHA: true
+  enableHA: false
   replicas: 1
   coredns:
     replicas: 1
   storage:
     persistence: false
-  serverToken:
-    secretKeyRef:
-      name: k3s-sync-token
-      key: K3S_TOKEN
-  mapServices:
-    fromHost:
-      - from: sulfoxide/entei-silicon-otlp-collector
-        to: sulfoxide/silicon-otlp-collector
-  podLabels:
-    <<: *tags
-    atomi.cloud/module: apiserver
-  podAnnotations:
-    <<: *tags
-    atomi.cloud/module: apiserver
-  labels:
-    <<: *tags
-    atomi.cloud/module: apiserver
-  annotations:
-    <<: *tags
-    atomi.cloud/module: apiserver
-  sync:
-    configmaps:
-      all: true
-    secrets:
-      all: true
-    ingresses:
-      enabled: true
-    pods:
-      enabled: true
-      ephemeralContainers: true
-      status: true
-    nodes:
-      enabled: true
-      fakeKubeletIPs: true
-      enableScheduler: true
-      syncNodeChanges: true
-      syncAllNodes: true
-  proxy:
-    metricsServer:
-      nodes:
-        enabled: false
-      pods:
-        enabled: false
-  syncer:
-    extraArgs:
-      - --tls-san=https://kubernetes.atomi.cloud
-  ingress:
-    enabled: true
-    ingressClassName: nginx
-    host: kubernetes.atomi.cloud
-  telemetry:
-    disabled: true
-  plugin:
-    secret-syncer:
-      image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-amd:1.0.0
-      imagePullPolicy: IfNotPresent
-  init:
-    manifests: |
-      apiVersion: v1
-      kind: Namespace
-      metadata:
-        labels:
-          kubernetes.io/metadata.name: sulfoxide
-        name: sulfoxide
+#  serverToken:
+#    secretKeyRef:
+#      name: k3s-sync-token
+#      key: K3S_TOKEN
+#  mapServices:
+#    fromHost:
+#      - from: sulfoxide/entei-silicon-otlp-collector
+#        to: sulfoxide/silicon-otlp-collector
+#  podLabels:
+#    <<: *tags
+#    atomi.cloud/module: apiserver
+#  podAnnotations:
+#    <<: *tags
+#    atomi.cloud/module: apiserver
+#  labels:
+#    <<: *tags
+#    atomi.cloud/module: apiserver
+#  annotations:
+#    <<: *tags
+#    atomi.cloud/module: apiserver
+#  sync:
+#    configmaps:
+#      all: true
+#    secrets:
+#      all: true
+#    ingresses:
+#      enabled: true
+#    pods:
+#      enabled: true
+#      ephemeralContainers: true
+#      status: true
+#    nodes:
+#      enabled: true
+#      fakeKubeletIPs: true
+#      enableScheduler: true
+#      syncNodeChanges: true
+#      syncAllNodes: true
+#  proxy:
+#    metricsServer:
+#      nodes:
+#        enabled: false
+#      pods:
+#        enabled: false
+#  syncer:
+#    extraArgs:
+#      - --tls-san=https://kubernetes.atomi.cloud
+#  ingress:
+#    enabled: true
+#    ingressClassName: nginx
+#    host: kubernetes.atomi.cloud
+#  telemetry:
+#    disabled: true
+#  plugin:
+#    secret-syncer:
+#      image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-amd:1.0.0
+#      imagePullPolicy: IfNotPresent
+#  init:
+#    manifests: |
+#      apiVersion: v1
+#      kind: Namespace
+#      metadata:
+#        labels:
+#          kubernetes.io/metadata.name: sulfoxide
+#        name: sulfoxide
 
 # -- ETCD Cluster configuration. See [etcd documentation](https://artifacthub.io/packages/helm/bitnami/etcd)
 etcd:
