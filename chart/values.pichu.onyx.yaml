@@ -40,6 +40,7 @@ etcd:
     limits:
       cpu: 500m
       memory: 512Mi
+
   fullnameOverride: iodine-etcd
 vcluster:
   replicas: 1
