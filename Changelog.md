@@ -1,3 +1,10 @@
+## [1.17.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.8...v1.17.0) (2024-02-19)
+
+
+### 🚀 New Features
+
+* migrate to vcluster vanilla k8s ([d6e8e9c](https://github.com/AtomiCloud/sulfoxide.iodine/commit/d6e8e9c6706272ce48ee8fc65841628daf2bc288))
+
 ## [1.16.8](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.16.7...v1.16.8) (2024-02-17)
 
 
