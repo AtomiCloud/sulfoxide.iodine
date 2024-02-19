@@ -9,55 +9,36 @@ tags: &tags
 auth:
   remoteName: PICHU_SULFOXIDE_SOS
 
-datastore:
-  enable: true
-  remoteName: PICHU_OPAL_K3S_DATASTORE_ENDPOINT
-
-datastoreCa:
-  enable: true
-  remoteName: PICHU_OPAL_K3S_DATASTORE_CA
-
-k3sSyncToken:
-  remoteName: PICHU_K3S_TOKEN
-
-etcd:
-  enabled: false
-
-vcluster: {}
-#  replicas: 1
-#  coredns:
-#    replicas: 1
-#  podLabels:
-#    <<: *tags
-#  podAnnotations:
-#    <<: *tags
-#  labels:
-#    <<: *tags
-#  annotations:
-#    <<: *tags
-#  syncer:
-#    extraArgs:
-#      - --kube-config-context-name=pichu-opal
-#      - --out-kube-config-server=https://pichu.opal.kubernetes.atomi.cloud
-#  ingress:
-#    host: pichu.opal.kubernetes.atomi.cloud
-#
-#  volumes:
-#    - name: datastore-tls
-#      secret:
-#        secretName: datastore-ca
-#        items:
-#          - key: K3S_DATASTORE_CAFILE
-#            path: cert.ca
-#  vcluster:
-#    extraVolumeMounts:
-#      - mountPath: /etc/certs
-#        name: datastore-tls
-#    env:
-#      - name: K3S_DATASTORE_ENDPOINT
-#        valueFrom:
-#          secretKeyRef:
-#            name: datastore-endpoint
-#            key: K3S_DATASTORE_ENDPOINT
-#      - name: K3S_DATASTORE_CAFILE
-#        value: /etc/certs/cert.ca
+vcluster:
+  replicas: 1
+  coredns:
+    replicas: 1
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  etcd:
+    storage:
+      persistence: true
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  syncer:
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+    extraArgs:
+      - --kube-config-context-name=pichu-opal
+      - --out-kube-config-server=https://pichu.opal.kubernetes.cluster.atomi.cloud
+  ingress:
+    host: pichu.opal.kubernetes.cluster.atomi.cloud

@@ -128,6 +128,13 @@ vcluster:
         enabled: false
 
   syncer:
+    resources:
+      requests:
+        cpu: 125m
+        memory: 128Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
     annotations:
       <<: *tags
       atomi.cloud/module: syncer

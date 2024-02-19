@@ -9,52 +9,41 @@ tags: &tags
 auth:
   remoteName: RAICHU_SULFOXIDE_SOS
 
-datastore:
-  enable: false
+vcluster:
+  replicas: 3
+  coredns:
+    replicas: 3
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  etcd:
+    replicas: 3
+    storage:
+      persistence: true
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  syncer:
+    replicas: 3
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+    extraArgs:
+      - --kube-config-context-name=raichu-onyx
+      - --out-kube-config-server=https://raichu.onyx.kubernetes.cluster.atomi.cloud
+  ingress:
+    host: raichu.onyx.kubernetes.cluster.atomi.cloud
 
-datastoreCa:
-  enable: false
-
-k3sSyncToken:
-  remoteName: RAICHU_K3S_TOKEN
-
-etcd:
-  enabled: true
-  commonLabels:
-    <<: *tags
-  podLabels:
-    <<: *tags
-  commonAnnotations:
-    <<: *tags
-  podAnnotations:
-    <<: *tags
-  persistence:
-    enabled: true
-    accessModes: [ "ReadWriteOnce" ]
-    storageClass: "ebs-gp3"
-  replicaCount: 6
-  fullnameOverride: iodine-etcd
-vcluster: {}
-#  replicas: 3
-#  coredns:
-#    replicas: 3
-#  podLabels:
-#    <<: *tags
-#  podAnnotations:
-#    <<: *tags
-#  labels:
-#    <<: *tags
-#  annotations:
-#    <<: *tags
-#  syncer:
-#    extraArgs:
-#      - --kube-config-context-name=raichu-onyx
-#      - --out-kube-config-server=https://raichu.onyx.kubernetes.atomi.cloud
-#  ingress:
-#    host: raichu.onyx.kubernetes.atomi.cloud
-#  vcluster:
-#    env:
-#      - name: K3S_DATASTORE_ENDPOINT
-#        value: http://iodine-etcd:2379
 
 

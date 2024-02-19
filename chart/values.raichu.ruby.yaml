@@ -9,52 +9,39 @@ tags: &tags
 auth:
   remoteName: RAICHU_SULFOXIDE_SOS
 
-datastore:
-  enable: true
-  remoteName: RAICHU_RUBY_K3S_DATASTORE_ENDPOINT
+vcluster:
+  replicas: 3
+  coredns:
+    replicas: 3
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  etcd:
+    replicas: 3
+    storage:
+      persistence: true
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  syncer:
+    replicas: 3
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+    extraArgs:
+      - --kube-config-context-name=raichu-ruby
+      - --out-kube-config-server=https://raichu.ruby.kubernetes.cluster.atomi.cloud
+  ingress:
+    host: raichu.ruby.kubernetes.cluster.atomi.cloud
 
-datastoreCa:
-  enable: true
-  remoteName: RAICHU_RUBY_K3S_DATASTORE_CA
-
-k3sSyncToken:
-  remoteName: RAICHU_K3S_TOKEN
-
-etcd:
-  enabled: false
-
-vcluster: {}
-#  podLabels:
-#    <<: *tags
-#  podAnnotations:
-#    <<: *tags
-#  labels:
-#    <<: *tags
-#  annotations:
-#    <<: *tags
-#  syncer:
-#    extraArgs:
-#      - --kube-config-context-name=raichu-ruby
-#      - --out-kube-config-server=https://raichu.ruby.kubernetes.atomi.cloud
-#  ingress:
-#    host: raichu.ruby.kubernetes.atomi.cloud
-#
-#  volumes:
-#    - name: datastore-tls
-#      secret:
-#        secretName: datastore-ca
-#        items:
-#          - key: K3S_DATASTORE_CAFILE
-#            path: cert.ca
-#  vcluster:
-#    extraVolumeMounts:
-#      - mountPath: /etc/certs
-#        name: datastore-tls
-#    env:
-#      - name: K3S_DATASTORE_ENDPOINT
-#        valueFrom:
-#          secretKeyRef:
-#            name: datastore-endpoint
-#            key: K3S_DATASTORE_ENDPOINT
-#      - name: K3S_DATASTORE_CAFILE
-#        value: /etc/certs/cert.ca

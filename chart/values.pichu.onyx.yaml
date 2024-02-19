@@ -40,8 +40,8 @@ vcluster:
     podLabels:
       <<: *tags
     extraArgs:
-      - --kube-config-context-name=pichu-opal
-      - --out-kube-config-server=https://pichu.opal.kubernetes.cluster.atomi.cloud
+      - --kube-config-context-name=pichu-onyx
+      - --out-kube-config-server=https://pichu.onyx.kubernetes.cluster.atomi.cloud
   ingress:
-    host: pichu.opal.kubernetes.cluster.atomi.cloud
+    host: pichu.onyx.kubernetes.cluster.atomi.cloud
 
