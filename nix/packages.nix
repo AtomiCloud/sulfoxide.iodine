@@ -1,4 +1,4 @@
-{ pkgs, atomi, pkgs-sep-24-23 }:
+{ pkgs, atomi, pkgs-feb-19-24 }:
 let
 
   all = {
@@ -11,8 +11,8 @@ let
           sg;
       }
     );
-    sep-24-23 = (
-      with pkgs-sep-24-23;
+    feb-19-24 = (
+      with pkgs-feb-19-24;
       {
         inherit
           coreutils
@@ -27,6 +27,7 @@ let
           treefmt
 
           # infra
+          vcluster
           k3d
           helm-docs
           kubectl
@@ -41,4 +42,4 @@ let
 in
 with all;
 atomipkgs //
-sep-24-23
+feb-19-24

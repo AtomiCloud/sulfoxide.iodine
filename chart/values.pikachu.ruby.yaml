@@ -23,41 +23,41 @@ k3sSyncToken:
 etcd:
   enabled: false
 
-vcluster:
-  replicas: 1
-  coredns:
-    replicas: 1
-  podLabels:
-    <<: *tags
-  podAnnotations:
-    <<: *tags
-  labels:
-    <<: *tags
-  annotations:
-    <<: *tags
-  syncer:
-    extraArgs:
-      - --kube-config-context-name=pikachu-ruby
-      - --out-kube-config-server=https://pikachu.ruby.kubernetes.atomi.cloud
-  ingress:
-    host: pikachu.ruby.kubernetes.atomi.cloud
-
-  volumes:
-    - name: datastore-tls
-      secret:
-        secretName: datastore-ca
-        items:
-          - key: K3S_DATASTORE_CAFILE
-            path: cert.ca
-  vcluster:
-    extraVolumeMounts:
-      - mountPath: /etc/certs
-        name: datastore-tls
-    env:
-      - name: K3S_DATASTORE_ENDPOINT
-        valueFrom:
-          secretKeyRef:
-            name: datastore-endpoint
-            key: K3S_DATASTORE_ENDPOINT
-      - name: K3S_DATASTORE_CAFILE
-        value: /etc/certs/cert.ca
+vcluster: {}
+#  replicas: 1
+#  coredns:
+#    replicas: 1
+#  podLabels:
+#    <<: *tags
+#  podAnnotations:
+#    <<: *tags
+#  labels:
+#    <<: *tags
+#  annotations:
+#    <<: *tags
+#  syncer:
+#    extraArgs:
+#      - --kube-config-context-name=pikachu-ruby
+#      - --out-kube-config-server=https://pikachu.ruby.kubernetes.atomi.cloud
+#  ingress:
+#    host: pikachu.ruby.kubernetes.atomi.cloud
+#
+#  volumes:
+#    - name: datastore-tls
+#      secret:
+#        secretName: datastore-ca
+#        items:
+#          - key: K3S_DATASTORE_CAFILE
+#            path: cert.ca
+#  vcluster:
+#    extraVolumeMounts:
+#      - mountPath: /etc/certs
+#        name: datastore-tls
+#    env:
+#      - name: K3S_DATASTORE_ENDPOINT
+#        valueFrom:
+#          secretKeyRef:
+#            name: datastore-endpoint
+#            key: K3S_DATASTORE_ENDPOINT
+#      - name: K3S_DATASTORE_CAFILE
+#        value: /etc/certs/cert.ca

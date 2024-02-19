@@ -5,13 +5,14 @@ type: application
 version: 1.16.8
 appVersion: "v0.18.1"
 dependencies:
-  - name: vcluster
-    version: v0.18.1
+  - name: vcluster-k8s
+    alias: vcluster
+    version: v0.19.0
     repository: https://charts.loft.sh
   - name: sulfoxide-bromine
     version: 1.3.0
     repository: oci://ghcr.io/atomicloud/sulfoxide.bromine
-  - name: etcd
-    repository: oci://registry-1.docker.io/bitnamicharts
-    version: 9.10.5
-    condition: etcd.enabled
+#  - name: etcd
+#    repository: oci://registry-1.docker.io/bitnamicharts
+#    version: 9.10.5
+#    condition: etcd.enabled

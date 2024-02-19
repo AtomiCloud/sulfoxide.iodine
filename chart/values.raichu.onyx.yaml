@@ -34,27 +34,27 @@ etcd:
     storageClass: "ebs-gp3"
   replicaCount: 6
   fullnameOverride: iodine-etcd
-vcluster:
-  replicas: 3
-  coredns:
-    replicas: 3
-  podLabels:
-    <<: *tags
-  podAnnotations:
-    <<: *tags
-  labels:
-    <<: *tags
-  annotations:
-    <<: *tags
-  syncer:
-    extraArgs:
-      - --kube-config-context-name=raichu-onyx
-      - --out-kube-config-server=https://raichu.onyx.kubernetes.atomi.cloud
-  ingress:
-    host: raichu.onyx.kubernetes.atomi.cloud
-  vcluster:
-    env:
-      - name: K3S_DATASTORE_ENDPOINT
-        value: http://iodine-etcd:2379
+vcluster: {}
+#  replicas: 3
+#  coredns:
+#    replicas: 3
+#  podLabels:
+#    <<: *tags
+#  podAnnotations:
+#    <<: *tags
+#  labels:
+#    <<: *tags
+#  annotations:
+#    <<: *tags
+#  syncer:
+#    extraArgs:
+#      - --kube-config-context-name=raichu-onyx
+#      - --out-kube-config-server=https://raichu.onyx.kubernetes.atomi.cloud
+#  ingress:
+#    host: raichu.onyx.kubernetes.atomi.cloud
+#  vcluster:
+#    env:
+#      - name: K3S_DATASTORE_ENDPOINT
+#        value: http://iodine-etcd:2379
 
 

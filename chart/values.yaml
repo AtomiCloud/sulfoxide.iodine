@@ -50,148 +50,124 @@ auth:
   # -- secret key to store DOPPLER_TOKEN
   secretKey: DOPPLER_TOKEN
 
-# -- K3S state (postgresql) auth
-datastore:
-  # -- Attempt to obtain datastore's connection string
-  enable: true
-  # -- external secret refresh interval
-  refreshInterval: 1h
-  # -- Secret store to reference
-  secretStore:
-    # -- name of the secret store to reference
-    name: doppler-iodine
-    # -- kind of the secret store to reference
-    kind: SecretStore
-  policy:
-    # -- External Secret creation policy
-    creation: Owner
-    # -- External Secret deletion policy
-    deletion: Retain
-  # -- name of the secret to be created
-  name: datastore-endpoint
-  # -- name of the remote secret name
-  remoteName: PICHU_OPAL_K3S_DATASTORE_ENDPOINT
-  # -- secret key to store the connection string secret
-  secretKey: K3S_DATASTORE_ENDPOINT
-
-# -- K3S state (postgresql) Certificate Authority
-datastoreCa:
-  # -- Attempt to obtain datastore's certificate authority
-  enable: true
-  # -- external secret refresh interval
-  refreshInterval: 1h
-  # -- Secret store to reference
-  secretStore:
-    # -- name of the secret store to reference
-    name: doppler-iodine
-    # -- kind of the secret store to reference
-    kind: SecretStore
-  policy:
-    # -- External Secret creation policy
-    creation: Owner
-    # -- External Secret deletion policy
-    deletion: Retain
-  # -- name of the secret to be created
-  name: datastore-ca
-  # -- name of the remote secret name
-  remoteName: PICHU_OPAL_K3S_DATASTORE_CA
-  # -- secret key to store the certificate authority
-  secretKey: K3S_DATASTORE_CAFILE
-
-# -- K3S sync token
-k3sSyncToken:
-  # -- external secret refresh interval
-  refreshInterval: 1h
-  # -- Secret store to reference
-  secretStore:
-    # -- name of the secret store to reference
-    name: doppler-iodine
-    # -- kind of the secret store to reference
-    kind: SecretStore
-  policy:
-    # -- External Secret creation policy
-    creation: Owner
-    # -- External Secret deletion policy
-    deletion: Retain
-  # -- name of the secret to be created
-  name: k3s-sync-token
-  # -- name of the remote secret name
-  remoteName: PIKACHU_K3S_TOKEN
-  # -- secret key to store the connection string secret
-  secretKey: K3S_TOKEN
-
 # -- Virtual Cluster Configuration. See [vcluster documentation](https://artifacthub.io/packages/helm/loft/vcluster)
 vcluster:
-  enableHA: false
   replicas: 1
   coredns:
     replicas: 1
-  storage:
-    persistence: false
-#  serverToken:
-#    secretKeyRef:
-#      name: k3s-sync-token
-#      key: K3S_TOKEN
-#  mapServices:
-#    fromHost:
-#      - from: sulfoxide/entei-silicon-otlp-collector
-#        to: sulfoxide/silicon-otlp-collector
-#  podLabels:
-#    <<: *tags
-#    atomi.cloud/module: apiserver
-#  podAnnotations:
-#    <<: *tags
-#    atomi.cloud/module: apiserver
-#  labels:
-#    <<: *tags
-#    atomi.cloud/module: apiserver
-#  annotations:
-#    <<: *tags
-#    atomi.cloud/module: apiserver
-#  sync:
-#    configmaps:
-#      all: true
-#    secrets:
-#      all: true
-#    ingresses:
-#      enabled: true
-#    pods:
-#      enabled: true
-#      ephemeralContainers: true
-#      status: true
-#    nodes:
-#      enabled: true
-#      fakeKubeletIPs: true
-#      enableScheduler: true
-#      syncNodeChanges: true
-#      syncAllNodes: true
-#  proxy:
-#    metricsServer:
-#      nodes:
-#        enabled: false
-#      pods:
-#        enabled: false
-#  syncer:
-#    extraArgs:
-#      - --tls-san=https://kubernetes.atomi.cloud
-#  ingress:
-#    enabled: true
-#    ingressClassName: nginx
-#    host: kubernetes.atomi.cloud
-#  telemetry:
-#    disabled: true
-#  plugin:
-#    secret-syncer:
-#      image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-amd:1.0.0
-#      imagePullPolicy: IfNotPresent
-#  init:
-#    manifests: |
-#      apiVersion: v1
-#      kind: Namespace
-#      metadata:
-#        labels:
-#          kubernetes.io/metadata.name: sulfoxide
-#        name: sulfoxide
+    podAnnotations:
+      <<: *tags
+      atomi.cloud/module: coredns
+    podLabels:
+      <<: *tags
+      atomi.cloud/module: coredns
+    resources:
+      requests:
+        cpu: 125m
+        memory: 128Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+  etcd:
+    storage:
+      persistence: false
+      className: ebs-gp3
+    resources:
+      requests:
+        cpu: 125m
+        memory: 128Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+    labels:
+      <<: *tags
+      atomi.cloud/module: etcd
+    annotations:
+      <<: *tags
+      atomi.cloud/module: etcd
+    podAnnotations:
+      <<: *tags
+      atomi.cloud/module: etcd
+    podLabels:
+      <<: *tags
+      atomi.cloud/module: etcd
+    topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: topology.kubernetes.io/zone
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels:
+            <<: *tags
+            atomi.cloud/module: etcd
+  mapServices:
+    fromHost:
+      - from: sulfoxide/entei-silicon-otlp-collector
+        to: sulfoxide/silicon-otlp-collector
+  sync:
+    configmaps:
+      all: true
+    secrets:
+      all: true
+    ingresses:
+      enabled: true
+    pods:
+      enabled: true
+      ephemeralContainers: true
+      status: true
+    nodes:
+      enabled: true
+      fakeKubeletIPs: true
+      enableScheduler: true
+      syncNodeChanges: true
+      syncAllNodes: true
+  proxy:
+    metricsServer:
+      nodes:
+        enabled: false
+      pods:
+        enabled: false
+
+  syncer:
+    annotations:
+      <<: *tags
+      atomi.cloud/module: syncer
+    labels:
+      <<: *tags
+      atomi.cloud/module: syncer
+    podAnnotations:
+      <<: *tags
+      atomi.cloud/module: syncer
+    podLabels:
+      <<: *tags
+      atomi.cloud/module: syncer
+    topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: topology.kubernetes.io/zone
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels:
+            <<: *tags
+            atomi.cloud/module: syncer
+    extraArgs:
+      - --tls-san=https://kubernetes.atomi.cloud
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    host: kubernetes.atomi.cloud
+  telemetry:
+    disabled: true
+  plugin:
+    secret-syncer:
+      image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-amd:1.0.0
+      imagePullPolicy: IfNotPresent
+  init:
+    manifests: |
+      apiVersion: v1
+      kind: Namespace
+      metadata:
+        labels:
+          kubernetes.io/metadata.name: sulfoxide
+        name: sulfoxide
 
 # -- ETCD Cluster configuration. See [etcd documentation](https://artifacthub.io/packages/helm/bitnami/etcd)
 etcd:

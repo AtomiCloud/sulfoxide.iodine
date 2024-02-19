@@ -57,13 +57,12 @@ tasks:
 
   latest:
     desc: Get the latest version of External Secrets Operator
+    silent: true
     cmds:
       - task: util:latest
         vars:
           REPO_NAME: vcluster
           REPO_URL: https://charts.loft.sh
-          CHART_NAME: vcluster
+          CHART_NAME: vcluster-k8s
       - >-
         echo "sulfoxide-bromine: $(skopeo list-tags docker://ghcr.io/atomicloud/sulfoxide.bromine/sulfoxide-bromine | jq -r '.Tags[]' | sort -V | tail -n 1)"
-      - >-
-        echo "ectd: $(skopeo list-tags docker://registry-1.docker.io/bitnamicharts/etcd | jq -r '.Tags[]' | sort -V | tail -n 1)"

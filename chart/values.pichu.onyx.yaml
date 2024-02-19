@@ -9,66 +9,39 @@ tags: &tags
 auth:
   remoteName: PICHU_SULFOXIDE_SOS
 
-datastore:
-  enable: false
-
-datastoreCa:
-  enable: false
-
-k3sSyncToken:
-  remoteName: PICHU_K3S_TOKEN
-
-etcd:
-  enabled: true
-  commonLabels:
-    <<: *tags
-  podLabels:
-    <<: *tags
-  commonAnnotations:
-    <<: *tags
-  podAnnotations:
-    <<: *tags
-    atomi.cloud/managed-by: argocd
-  persistence:
-    enabled: true
-    accessModes: [ "ReadWriteOnce" ]
-    storageClass: "ebs-gp3"
-  replicaCount: 3
-  resources:
-    requests:
-      cpu: 125m
-      memory: 128Mi
-    limits:
-      cpu: 500m
-      memory: 512Mi
-  fullnameOverride: iodine-etcd
-
 vcluster:
-  nodeSelector:
-    topology.kubernetes.io/zone: ap-southeast-1a
-  storage:
-    persistence: true
-    className: ebs-gp3
-#  replicas: 1
-#  coredns:
-#    replicas: 1
-#  podLabels:
-#    <<: *tags
-#  podAnnotations:
-#    <<: *tags
-#  labels:
-#    <<: *tags
-#  annotations:
-#    <<: *tags
-#  syncer:
-#    extraArgs:
-#      - --kube-config-context-name=pichu-onyx
-#      - --out-kube-config-server=https://pichu.onyx.kubernetes.atomi.cloud
-#  ingress:
-#    host: pichu.onyx.kubernetes.atomi.cloud
-#  vcluster:
-#    env:
-#      - name: K3S_DATASTORE_ENDPOINT
-#        value: http://iodine-etcd:2379
-
+  replicas: 1
+  coredns:
+    replicas: 1
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  etcd:
+    nodeSelector:
+      topology.kubernetes.io/zone: ap-southeast-1a
+    storage:
+      persistence: true
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  syncer:
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+    extraArgs:
+      - --kube-config-context-name=pichu-opal
+      - --out-kube-config-server=https://pichu.opal.kubernetes.cluster.atomi.cloud
+  ingress:
+    host: pichu.opal.kubernetes.cluster.atomi.cloud
 

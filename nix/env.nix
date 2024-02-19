@@ -13,6 +13,7 @@ with packages;
     pls
     git
     skopeo
+    vcluster
   ];
 
   infra = [
