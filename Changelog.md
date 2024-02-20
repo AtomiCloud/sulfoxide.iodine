@@ -1,3 +1,10 @@
+## [1.19.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.1...v1.19.2) (2024-02-20)
+
+
+### 🐛 Bug Fixes
+
+* base value still assumes AWS environment ([7537eeb](https://github.com/AtomiCloud/sulfoxide.iodine/commit/7537eebed619b7921ddaae615710f1318527f137))
+
 ## [1.19.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.0...v1.19.1) (2024-02-20)
 
 
