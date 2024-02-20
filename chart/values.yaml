@@ -71,7 +71,6 @@ vcluster:
   etcd:
     storage:
       persistence: false
-      className: ebs-gp3
     resources:
       requests:
         cpu: 125m
