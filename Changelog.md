@@ -1,3 +1,10 @@
+## [1.19.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.0...v1.19.1) (2024-02-20)
+
+
+### 🐛 Bug Fixes
+
+* proper storage class ([4366263](https://github.com/AtomiCloud/sulfoxide.iodine/commit/4366263f4306b9508d597548a41202364d56922f))
+
 ## [1.19.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.18.0...v1.19.0) (2024-02-20)
 
 
