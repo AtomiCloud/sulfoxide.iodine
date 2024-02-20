@@ -20,6 +20,7 @@ vcluster:
   etcd:
     storage:
       persistence: true
+      className: ebs-gp3
     nodeSelector:
       topology.kubernetes.io/zone: ap-southeast-1b
     labels:

@@ -21,6 +21,7 @@ vcluster:
     replicas: 3
     storage:
       persistence: true
+      className: ebs-gp3
     labels:
       <<: *tags
     annotations:
