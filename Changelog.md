@@ -1,3 +1,10 @@
+## [1.19.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.18.0...v1.19.0) (2024-02-20)
+
+
+### 🚀 New Features
+
+* node selector and arm image for vclusters ([8618dba](https://github.com/AtomiCloud/sulfoxide.iodine/commit/8618dba894beff8fceffb0d5d3507a34ea72ad1e))
+
 ## [1.18.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.17.0...v1.18.0) (2024-02-19)
 
 
