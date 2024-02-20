@@ -1,3 +1,10 @@
+## [1.19.3](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.2...v1.19.3) (2024-02-20)
+
+
+### 🐛 Bug Fixes
+
+* incorect image ref ([153a3c6](https://github.com/AtomiCloud/sulfoxide.iodine/commit/153a3c6bb2319e928ca84b96a4cc4d3dde61c465))
+
 ## [1.19.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.1...v1.19.2) (2024-02-20)
 
 
