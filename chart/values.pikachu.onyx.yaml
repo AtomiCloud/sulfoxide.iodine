@@ -47,7 +47,7 @@ vcluster:
       - --out-kube-config-server=https://pikachu.onyx.kubernetes.cluster.atomi.cloud
   plugin:
     secret-syncer:
-      image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-arm:1.0.0
+      image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-arm:main
   ingress:
     host: pikachu.onyx.kubernetes.cluster.atomi.cloud
 
