@@ -11,6 +11,7 @@ dependencies:
     repository: https://charts.loft.sh
   - name: sulfoxide-bromine
     version: 1.3.0
+    condition: sulfoxide-bromine.enabled
     repository: oci://ghcr.io/atomicloud/sulfoxide.bromine
 #  - name: etcd
 #    repository: oci://registry-1.docker.io/bitnamicharts

@@ -31,6 +31,8 @@ vcluster:
     podLabels:
       <<: *tags
   syncer:
+    nodeSelector:
+      kubernetes.io/arch: arm64
     labels:
       <<: *tags
     annotations:
@@ -42,6 +44,9 @@ vcluster:
     extraArgs:
       - --kube-config-context-name=pikachu-onyx
       - --out-kube-config-server=https://pikachu.onyx.kubernetes.cluster.atomi.cloud
+  plugin:
+    secret-syncer:
+      image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-arm:1.0.0
   ingress:
     host: pikachu.onyx.kubernetes.cluster.atomi.cloud
 
