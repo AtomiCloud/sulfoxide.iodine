@@ -43,6 +43,6 @@ vcluster:
       <<: *tags
     extraArgs:
       - --kube-config-context-name=pikachu-ruby
-      - --out-kube-config-server=https://pikachu.ruby.kubernetes.cluster.atomi.cloud
+      - --out-kube-config-server=https://pikachu.ruby.kubernetes.atomi.cloud
   ingress:
-    host: pikachu.ruby.kubernetes.cluster.atomi.cloud
+    host: pikachu.ruby.kubernetes.atomi.cloud

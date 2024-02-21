@@ -44,12 +44,12 @@ vcluster:
       <<: *tags
     extraArgs:
       - --kube-config-context-name=raichu-onyx
-      - --out-kube-config-server=https://raichu.onyx.kubernetes.cluster.atomi.cloud
+      - --out-kube-config-server=https://raichu.onyx.kubernetes.atomi.cloud
   plugin:
     secret-syncer:
       image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-arm:main
   ingress:
-    host: raichu.onyx.kubernetes.cluster.atomi.cloud
+    host: raichu.onyx.kubernetes.atomi.cloud
 
 
 

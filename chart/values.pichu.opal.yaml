@@ -39,6 +39,6 @@ vcluster:
       <<: *tags
     extraArgs:
       - --kube-config-context-name=pichu-opal
-      - --out-kube-config-server=https://pichu.opal.kubernetes.cluster.atomi.cloud
+      - --out-kube-config-server=https://pichu.opal.kubernetes.atomi.cloud
   ingress:
-    host: pichu.opal.kubernetes.cluster.atomi.cloud
+    host: pichu.opal.kubernetes.atomi.cloud

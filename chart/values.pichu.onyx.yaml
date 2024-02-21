@@ -44,10 +44,10 @@ vcluster:
       <<: *tags
     extraArgs:
       - --kube-config-context-name=pichu-onyx
-      - --out-kube-config-server=https://pichu.onyx.kubernetes.cluster.atomi.cloud
+      - --out-kube-config-server=https://pichu.onyx.kubernetes.atomi.cloud
   plugin:
     secret-syncer:
       image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-arm:main
   ingress:
-    host: pichu.onyx.kubernetes.cluster.atomi.cloud
+    host: pichu.onyx.kubernetes.atomi.cloud
 
