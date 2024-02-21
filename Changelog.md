@@ -1,3 +1,10 @@
+## [1.19.4](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.3...v1.19.4) (2024-02-21)
+
+
+### 🐛 Bug Fixes
+
+* incorrect domain ([3fc3863](https://github.com/AtomiCloud/sulfoxide.iodine/commit/3fc3863d86fa6c8e7bff7570cb0dcbb7b9136393))
+
 ## [1.19.3](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.2...v1.19.3) (2024-02-20)
 
 
