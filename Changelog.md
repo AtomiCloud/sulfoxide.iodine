@@ -1,3 +1,10 @@
+## [1.19.5](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.4...v1.19.5) (2024-02-22)
+
+
+### 🐛 Bug Fixes
+
+* increase usage ([8106698](https://github.com/AtomiCloud/sulfoxide.iodine/commit/8106698d17cae24a97bb916de2330bb96f25a208))
+
 ## [1.19.4](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.3...v1.19.4) (2024-02-21)
 
 
