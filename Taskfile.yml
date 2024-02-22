@@ -35,6 +35,21 @@ includes:
     vars:
       LANDSCAPE: raichu
       CLUSTER: ruby
+  pichu:onyx:
+    taskfile: tasks/Taskfile.cluster.yaml
+    vars:
+      LANDSCAPE: pichu
+      CLUSTER: onyx
+  pikachu:onyx:
+    taskfile: tasks/Taskfile.cluster.yaml
+    vars:
+      LANDSCAPE: pikachu
+      CLUSTER: onyx
+  raichu:onyx:
+    taskfile: tasks/Taskfile.cluster.yaml
+    vars:
+      LANDSCAPE: raichu
+      CLUSTER: onyx
 
 tasks:
   # Utility

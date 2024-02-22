@@ -73,11 +73,11 @@ vcluster:
       persistence: false
     resources:
       requests:
-        cpu: 125m
-        memory: 128Mi
+        cpu: 250m
+        memory: 256Mi
       limits:
-        cpu: 500m
-        memory: 512Mi
+        cpu: 1000m
+        memory: 1Gi
     labels:
       <<: *tags
       atomi.cloud/module: etcd
@@ -129,11 +129,11 @@ vcluster:
   syncer:
     resources:
       requests:
-        cpu: 125m
-        memory: 128Mi
+        cpu: 250m
+        memory: 256Mi
       limits:
-        cpu: 500m
-        memory: 512Mi
+        cpu: 1000m
+        memory: 1Gi
     annotations:
       <<: *tags
       atomi.cloud/module: syncer
@@ -166,6 +166,13 @@ vcluster:
     secret-syncer:
       image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-amd:1.0.0
       imagePullPolicy: IfNotPresent
+      resources:
+        requests:
+          cpu: 31m
+          memory: 32Mi
+        limits:
+          cpu: 125m
+          memory: 128Mi
   init:
     manifests: |
       apiVersion: v1
