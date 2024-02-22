@@ -1,3 +1,10 @@
+## [1.20.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.6...v1.20.0) (2024-02-22)
+
+
+### 🚀 New Features
+
+* true using host scheduler ([4c955c8](https://github.com/AtomiCloud/sulfoxide.iodine/commit/4c955c8d4e647e87d40b0262778688469b27209d))
+
 ## [1.19.6](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.5...v1.19.6) (2024-02-22)
 
 
