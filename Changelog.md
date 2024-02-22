@@ -1,3 +1,10 @@
+## [1.21.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.20.0...v1.21.0) (2024-02-22)
+
+
+### 🚀 New Features
+
+* sync atomi.cloud labels ([391584f](https://github.com/AtomiCloud/sulfoxide.iodine/commit/391584f8d7f275d0220b085d2871f90559d49bb2))
+
 ## [1.20.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.6...v1.20.0) (2024-02-22)
 
 
