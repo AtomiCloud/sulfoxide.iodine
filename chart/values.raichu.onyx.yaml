@@ -45,6 +45,7 @@ vcluster:
     extraArgs:
       - --kube-config-context-name=raichu-onyx
       - --out-kube-config-server=https://raichu.onyx.kubernetes.atomi.cloud
+      - --sync-labels=atomi.cloud/*
   plugin:
     secret-syncer:
       image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-arm:main

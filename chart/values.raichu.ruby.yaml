@@ -42,6 +42,7 @@ vcluster:
     extraArgs:
       - --kube-config-context-name=raichu-ruby
       - --out-kube-config-server=https://raichu.ruby.kubernetes.atomi.cloud
+      - --sync-labels=atomi.cloud/*
   ingress:
     host: raichu.ruby.kubernetes.atomi.cloud
 

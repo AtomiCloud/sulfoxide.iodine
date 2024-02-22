@@ -42,6 +42,7 @@ vcluster:
     extraArgs:
       - --kube-config-context-name=raichu-opal
       - --out-kube-config-server=https://raichu.opal.kubernetes.atomi.cloud
+      - --sync-labels=atomi.cloud/*
   ingress:
     host: raichu.opal.kubernetes.atomi.cloud
 
