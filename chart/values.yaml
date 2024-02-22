@@ -116,7 +116,7 @@ vcluster:
     nodes:
       enabled: true
       fakeKubeletIPs: true
-      enableScheduler: true
+      enableScheduler: false
       syncNodeChanges: true
       syncAllNodes: true
   proxy:
