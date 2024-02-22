@@ -1,3 +1,10 @@
+## [1.19.6](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.5...v1.19.6) (2024-02-22)
+
+
+### 🐛 Bug Fixes
+
+* increase memory usage for syncer ([a553015](https://github.com/AtomiCloud/sulfoxide.iodine/commit/a553015c7340783760a54200fbe6da9311c32bb7))
+
 ## [1.19.5](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.19.4...v1.19.5) (2024-02-22)
 
 
