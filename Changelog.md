@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.21.0...v1.21.1) (2024-02-26)
+
+
+### 🐛 Bug Fixes
+
+* update to use arch-agnostic images ([4ccb9be](https://github.com/AtomiCloud/sulfoxide.iodine/commit/4ccb9beeeeaa07361293e71c872b69ac5165909e))
+
 ## [1.21.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.20.0...v1.21.0) (2024-02-22)
 
 
