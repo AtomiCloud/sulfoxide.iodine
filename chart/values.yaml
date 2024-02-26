@@ -164,7 +164,7 @@ vcluster:
     disabled: true
   plugin:
     secret-syncer:
-      image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer-amd:1.0.0
+      image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer:1.1.0
       imagePullPolicy: IfNotPresent
       resources:
         requests:
