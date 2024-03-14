@@ -1,3 +1,10 @@
+## [1.22.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.21.1...v1.22.0) (2024-03-14)
+
+
+### 🚀 New Features
+
+* save cost by dropping silicon logs on grafana ([acba6f4](https://github.com/AtomiCloud/sulfoxide.iodine/commit/acba6f4b62e9f01b6943ec5b5b36ed73d6342e6c))
+
 ## [1.21.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.21.0...v1.21.1) (2024-02-26)
 
 
