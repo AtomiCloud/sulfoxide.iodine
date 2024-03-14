@@ -58,6 +58,7 @@ vcluster:
     podAnnotations:
       <<: *tags
       atomi.cloud/module: coredns
+      drop_log: "true"
     podLabels:
       <<: *tags
       atomi.cloud/module: coredns
@@ -84,9 +85,11 @@ vcluster:
     annotations:
       <<: *tags
       atomi.cloud/module: etcd
+      drop_log: "true"
     podAnnotations:
       <<: *tags
       atomi.cloud/module: etcd
+      drop_log: "true"
     podLabels:
       <<: *tags
       atomi.cloud/module: etcd
@@ -137,12 +140,14 @@ vcluster:
     annotations:
       <<: *tags
       atomi.cloud/module: syncer
+      drop_log: "true"
     labels:
       <<: *tags
       atomi.cloud/module: syncer
     podAnnotations:
       <<: *tags
       atomi.cloud/module: syncer
+      drop_log: "true"
     podLabels:
       <<: *tags
       atomi.cloud/module: syncer
