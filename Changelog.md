@@ -1,3 +1,10 @@
+## [1.23.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.22.0...v1.23.0) (2024-03-26)
+
+
+### 🚀 New Features
+
+* increase resource for raichu ([b451069](https://github.com/AtomiCloud/sulfoxide.iodine/commit/b4510697ae40153403963819fab63eea6a9ef474))
+
 ## [1.22.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.21.1...v1.22.0) (2024-03-14)
 
 
