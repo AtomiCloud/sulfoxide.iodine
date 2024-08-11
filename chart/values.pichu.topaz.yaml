@@ -1,0 +1,52 @@
+serviceTree:
+  landscape: &landscape pichu
+  cluster: &cluster topaz
+
+tags: &tags
+  atomi.cloud/landscape: *landscape
+  atomi.cloud/cluster: *cluster
+
+auth:
+  clientId:
+    remoteName: PICHU_SULFOXIDE_SOS_CLIENT_ID
+  clientSecret:
+    remoteName: PICHU_SULFOXIDE_SOS_CLIENT_SECRET
+
+vcluster:
+  replicas: 1
+  coredns:
+    replicas: 1
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  etcd:
+    nodeSelector:
+      topology.kubernetes.io/zone: ap-southeast-1a
+    storage:
+      persistence: true
+      className: ebs-gp3
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  syncer:
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+    extraArgs:
+      - --kube-config-context-name=pichu-topaz
+      - --out-kube-config-server=https://pichu.topaz.kubernetes.atomi.cloud
+      - --sync-labels=atomi.cloud/*
+  ingress:
+    host: pichu.topaz.kubernetes.atomi.cloud
+

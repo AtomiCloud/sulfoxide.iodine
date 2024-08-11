@@ -13,14 +13,20 @@ tags: &tags
 
 # -- Create SecretStore via secret of secrets pattern
 sulfoxide-bromine:
+  serviceTree:
+    platform: *platform
+    service: *service
   annotations:
     argocd.argoproj.io/sync-wave: "-5"
   # -- Store name to create
-  storeName: doppler-iodine
+  storeName: *service
   # -- Secret of Secrets reference
   rootSecret:
+    name: *service
     # -- DOPPLER Token Reference
-    ref: "SULFOXIDE_IODINE"
+    ref:
+      clientId: SULFOXIDE_IODINE_CLIENT_ID
+      clientSecret: SULFOXIDE_IODINE_CLIENT_SECRET
 
 # -- Secret Annotations (External Secrets) to control synchronization
 secretAnnotation:
@@ -33,7 +39,7 @@ auth:
   # -- Secret store to reference
   secretStore:
     # -- name of the secret store to reference
-    name: doppler
+    name: *service
     # -- kind of the secret store to reference
     kind: ClusterSecretStore
   policy:
@@ -43,12 +49,21 @@ auth:
     deletion: Retain
   # -- name of the secret to be created
   name: root-token
-  # -- name of DOPPLER_TOKEN to be stored
-  remoteName: PICHU_SULFOXIDE_SOS
+  # -- Upsync secret of secrets reference for client ID
+  clientId:
+    # -- remote reference of the CLIENT_ID in the secret of secrets store
+    remoteName: PICHU_SULFOXIDE_SOS_CLIENT_ID
+    # -- secret key to store CLIENT_ID
+    secretKey: CLIENT_ID
+  # -- Upsync secret of secrets reference for client secret
+  clientSecret:
+    # -- remote reference of the CLIENT_SECRET in the secret of secrets store
+    remoteName: PICHU_SULFOXIDE_SOS_CLIENT_SECRET
+    # -- secret key to store CLIENT_SECRET
+    secretKey: CLIENT_SECRET
+
   # -- upsync namespace
   upsyncNamespace: sulfoxide
-  # -- secret key to store DOPPLER_TOKEN
-  secretKey: DOPPLER_TOKEN
 
 # -- Virtual Cluster Configuration. See [vcluster documentation](https://artifacthub.io/packages/helm/loft/vcluster)
 vcluster:

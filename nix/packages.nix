@@ -1,4 +1,4 @@
-{ pkgs, atomi, pkgs-feb-19-24 }:
+{ pkgs, atomi, pkgs-240810 }:
 let
 
   all = {
@@ -6,13 +6,12 @@ let
       with atomi;
       {
         inherit
-          infisical
           pls
           sg;
       }
     );
-    feb-19-24 = (
-      with pkgs-feb-19-24;
+    pkgs240810 = (
+      with pkgs-240810;
       {
         inherit
           coreutils
@@ -25,6 +24,7 @@ let
 
           # lint
           treefmt
+          infisical
 
           # infra
           vcluster
@@ -42,4 +42,4 @@ let
 in
 with all;
 atomipkgs //
-feb-19-24
+pkgs240810

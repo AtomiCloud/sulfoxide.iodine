@@ -1,0 +1,52 @@
+serviceTree:
+  landscape: &landscape pikachu
+  cluster: &cluster topaz
+
+tags: &tags
+  atomi.cloud/landscape: *landscape
+  atomi.cloud/cluster: *cluster
+
+auth:
+  clientId:
+    remoteName: PIKACHU_SULFOXIDE_SOS_CLIENT_ID
+  clientSecret:
+    remoteName: PIKACHU_SULFOXIDE_SOS_CLIENT_SECRET
+
+vcluster:
+  replicas: 1
+  coredns:
+    replicas: 1
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  etcd:
+    storage:
+      persistence: true
+      className: ebs-gp3
+    nodeSelector:
+      topology.kubernetes.io/zone: ap-southeast-1b
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  syncer:
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+    extraArgs:
+      - --kube-config-context-name=pikachu-topaz
+      - --out-kube-config-server=https://pikachu.topaz.kubernetes.atomi.cloud
+      - --sync-labels=atomi.cloud/*
+  ingress:
+    host: pikachu.topaz.kubernetes.atomi.cloud
+
