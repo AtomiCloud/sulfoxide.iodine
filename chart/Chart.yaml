@@ -2,7 +2,7 @@ apiVersion: v2
 name: sulfoxide-iodine
 description: Helm chart to install virtual cluster on a physical cluster
 type: application
-version: 1.24.0
+version: 1.24.1
 appVersion: "v0.19.7"
 dependencies:
   - name: vcluster-k8s

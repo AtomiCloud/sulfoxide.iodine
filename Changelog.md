@@ -1,3 +1,10 @@
+## [1.24.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.24.0...v1.24.1) (2024-08-11)
+
+
+### 🐛 Bug Fixes
+
+* incorrect store type ([006f026](https://github.com/AtomiCloud/sulfoxide.iodine/commit/006f026b6a9c3099475938e1fa0877b0458435e7))
+
 ## [1.24.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.23.0...v1.24.0) (2024-08-11)
 
 
