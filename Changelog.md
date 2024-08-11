@@ -1,3 +1,15 @@
+## [1.24.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.23.0...v1.24.0) (2024-08-11)
+
+
+### 📦 Upstreams Changes
+
+* upgrade nix, helm upstream, GHA ([e0e8d62](https://github.com/AtomiCloud/sulfoxide.iodine/commit/e0e8d6218a616123d26e890303136be12d820c34))
+
+
+### 🐛 Bug Fixes
+
+* missing landscape injection in secret store ([36ae7a0](https://github.com/AtomiCloud/sulfoxide.iodine/commit/36ae7a08ad88699bcbc59f8a3f1b926669b7c4be))
+
 ## [1.23.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.22.0...v1.23.0) (2024-03-26)
 
 
