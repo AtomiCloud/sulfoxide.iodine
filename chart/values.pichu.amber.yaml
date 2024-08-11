@@ -2,6 +2,8 @@ serviceTree:
   landscape: &landscape pichu
   cluster: &cluster amber
 
+
+
 tags: &tags
   atomi.cloud/landscape: *landscape
   atomi.cloud/cluster: *cluster
@@ -14,7 +16,7 @@ auth:
 
 sulfoxide-bromine:
   serviceTree:
-    landscape: *landscape
+    landscape: entei
     cluster: *cluster
 
 vcluster:

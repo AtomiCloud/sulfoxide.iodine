@@ -14,7 +14,7 @@ auth:
 
 sulfoxide-bromine:
   serviceTree:
-    landscape: *landscape
+    landscape: entei
     cluster: *cluster
 
 vcluster:
