@@ -1,3 +1,10 @@
+## [1.24.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.24.1...v1.24.2) (2024-08-11)
+
+
+### 🐛 Bug Fixes
+
+* point to entei cluster ([c5f6ec2](https://github.com/AtomiCloud/sulfoxide.iodine/commit/c5f6ec2b0ac6a5f7c927f6dde555665ea5501c3e))
+
 ## [1.24.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.24.0...v1.24.1) (2024-08-11)
 
 
