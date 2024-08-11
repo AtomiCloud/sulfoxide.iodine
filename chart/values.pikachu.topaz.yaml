@@ -12,6 +12,11 @@ auth:
   clientSecret:
     remoteName: PIKACHU_SULFOXIDE_SOS_CLIENT_SECRET
 
+sulfoxide-bromine:
+  serviceTree:
+    landscape: *landscape
+    cluster: *cluster
+
 vcluster:
   replicas: 1
   coredns:
