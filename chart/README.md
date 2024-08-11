@@ -15,7 +15,7 @@ Helm chart to install virtual cluster on a physical cluster
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| auth | object | `{"clientId":{"remoteName":"PICHU_SULFOXIDE_SOS_CLIENT_ID","secretKey":"CLIENT_ID"},"clientSecret":{"remoteName":"PICHU_SULFOXIDE_SOS_CLIENT_SECRET","secretKey":"CLIENT_SECRET"},"name":"root-token","policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","secretStore":{"kind":"ClusterSecretStore","name":"iodine"},"upsyncNamespace":"sulfoxide"}` | Root Doppler token |
+| auth | object | `{"clientId":{"remoteName":"PICHU_SULFOXIDE_SOS_CLIENT_ID","secretKey":"CLIENT_ID"},"clientSecret":{"remoteName":"PICHU_SULFOXIDE_SOS_CLIENT_SECRET","secretKey":"CLIENT_SECRET"},"name":"root-token","policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","secretStore":{"kind":"SecretStore","name":"iodine"},"upsyncNamespace":"sulfoxide"}` | Root Doppler token |
 | auth.clientId | object | `{"remoteName":"PICHU_SULFOXIDE_SOS_CLIENT_ID","secretKey":"CLIENT_ID"}` | Upsync secret of secrets reference for client ID |
 | auth.clientId.remoteName | string | `"PICHU_SULFOXIDE_SOS_CLIENT_ID"` | remote reference of the CLIENT_ID in the secret of secrets store |
 | auth.clientId.secretKey | string | `"CLIENT_ID"` | secret key to store CLIENT_ID |
@@ -26,8 +26,8 @@ Helm chart to install virtual cluster on a physical cluster
 | auth.policy.creation | string | `"Owner"` | External Secret creation policy |
 | auth.policy.deletion | string | `"Retain"` | External Secret deletion policy |
 | auth.refreshInterval | string | `"1h"` | external secret refresh interval |
-| auth.secretStore | object | `{"kind":"ClusterSecretStore","name":"iodine"}` | Secret store to reference |
-| auth.secretStore.kind | string | `"ClusterSecretStore"` | kind of the secret store to reference |
+| auth.secretStore | object | `{"kind":"SecretStore","name":"iodine"}` | Secret store to reference |
+| auth.secretStore.kind | string | `"SecretStore"` | kind of the secret store to reference |
 | auth.secretStore.name | string | `"iodine"` | name of the secret store to reference |
 | auth.upsyncNamespace | string | `"sulfoxide"` | upsync namespace |
 | etcd | object | `{"auth":{"client":{"enableAuthentication":false},"peer":{"enableAuthentication":false},"rbac":{"create":false},"token":{"enabled":false}},"commonAnnotations":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"iodine"},"atomi.cloud/module":"etcd"},"commonLabels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"iodine"},"atomi.cloud/module":"etcd"},"persistence":{"enabled":false},"podAnnotations":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"iodine"},"atomi.cloud/module":"etcd"},"podLabels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"iodine"},"atomi.cloud/module":"etcd"},"removeMemberOnContainerTermination":false,"replicaCount":3,"topologySpreadConstraints":[{"labelSelector":{"matchLabels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"iodine"},"atomi.cloud/module":"etcd"}},"maxSkew":1,"topologyKey":"topology.kubernetes.io/zone","whenUnsatisfiable":"ScheduleAnyway"}]}` | ETCD Cluster configuration. See [etcd documentation](https://artifacthub.io/packages/helm/bitnami/etcd) |

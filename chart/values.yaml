@@ -41,7 +41,7 @@ auth:
     # -- name of the secret store to reference
     name: *service
     # -- kind of the secret store to reference
-    kind: ClusterSecretStore
+    kind: SecretStore
   policy:
     # -- External Secret creation policy
     creation: Owner
