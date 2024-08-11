@@ -14,8 +14,8 @@ tags: &tags
 # -- Create SecretStore via secret of secrets pattern
 sulfoxide-bromine:
   serviceTree:
-    platform: *platform
-    service: *service
+    platform: sulfoxide
+    service: sos
   annotations:
     argocd.argoproj.io/sync-wave: "-5"
   # -- Store name to create
