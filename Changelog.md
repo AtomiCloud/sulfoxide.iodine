@@ -1,3 +1,10 @@
+## [1.25.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.24.3...v1.25.0) (2024-08-17)
+
+
+### 🚀 New Features
+
+* allow iodine to be deployed on DO clusters ([a640112](https://github.com/AtomiCloud/sulfoxide.iodine/commit/a640112559b22387d52ab21482206a7986d3771c))
+
 ## [1.24.3](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.24.2...v1.24.3) (2024-08-11)
 
 
