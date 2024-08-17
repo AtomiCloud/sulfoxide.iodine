@@ -7,7 +7,15 @@ tags: &tags
   atomi.cloud/cluster: *cluster
 
 auth:
-  remoteName: PIKACHU_SULFOXIDE_SOS
+  clientId:
+    remoteName: PIKACHU_SULFOXIDE_SOS_CLIENT_ID
+  clientSecret:
+    remoteName: PIKACHU_SULFOXIDE_SOS_CLIENT_SECRET
+
+sulfoxide-bromine:
+  serviceTree:
+    landscape: entei
+    cluster: *cluster
 
 vcluster:
   replicas: 1
