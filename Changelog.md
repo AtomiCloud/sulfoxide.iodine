@@ -1,3 +1,10 @@
+## [1.26.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.25.0...v1.26.0) (2024-08-19)
+
+
+### 🚀 New Features
+
+* increase req/limit for iodine ([9076590](https://github.com/AtomiCloud/sulfoxide.iodine/commit/90765904c12b210ad8f7aaa64905321cd6b03de1))
+
 ## [1.25.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.24.3...v1.25.0) (2024-08-17)
 
 
