@@ -77,23 +77,16 @@ vcluster:
     podLabels:
       <<: *tags
       atomi.cloud/module: coredns
-    resources:
-      requests:
-        cpu: 125m
-        memory: 128Mi
-      limits:
-        cpu: 500m
-        memory: 512Mi
   etcd:
     storage:
       persistence: false
     resources:
       requests:
-        cpu: 250m
-        memory: 256Mi
+        cpu: 500m
+        memory: 512Mi
       limits:
         cpu: 1000m
-        memory: 1Gi
+        memory: 1.5Gi
     labels:
       <<: *tags
       atomi.cloud/module: etcd
@@ -147,11 +140,11 @@ vcluster:
   syncer:
     resources:
       requests:
-        cpu: 250m
-        memory: 512Mi
+        cpu: 500m
+        memory: 1Gi
       limits:
         cpu: 1000m
-        memory: 1Gi
+        memory: 2Gi
     annotations:
       <<: *tags
       atomi.cloud/module: syncer
