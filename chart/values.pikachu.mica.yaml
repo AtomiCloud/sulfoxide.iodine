@@ -1,0 +1,53 @@
+serviceTree:
+  landscape: &landscape pikachu
+  cluster: &cluster mica
+
+tags: &tags
+  atomi.cloud/landscape: *landscape
+  atomi.cloud/cluster: *cluster
+
+auth:
+  clientId:
+    remoteName: PIKACHU_SULFOXIDE_SOS_CLIENT_ID
+  clientSecret:
+    remoteName: PIKACHU_SULFOXIDE_SOS_CLIENT_SECRET
+
+sulfoxide-bromine:
+  serviceTree:
+    landscape: entei
+    cluster: *cluster
+
+vcluster:
+  replicas: 1
+  coredns:
+    replicas: 1
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  etcd:
+    storage:
+      persistence: true
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  syncer:
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+    extraArgs:
+      - --kube-config-context-name=pikachu-mica
+      - --out-kube-config-server=https://pikachu.mica.kubernetes.atomi.cloud
+      - --sync-labels=atomi.cloud/*
+  ingress:
+    host: pikachu.mica.kubernetes.atomi.cloud

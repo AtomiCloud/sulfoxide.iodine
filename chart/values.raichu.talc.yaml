@@ -1,0 +1,56 @@
+serviceTree:
+  landscape: &landscape raichu
+  cluster: &cluster talc
+
+tags: &tags
+  atomi.cloud/landscape: *landscape
+  atomi.cloud/cluster: *cluster
+
+auth:
+  clientId:
+    remoteName: RAICHU_SULFOXIDE_SOS_CLIENT_ID
+  clientSecret:
+    remoteName: RAICHU_SULFOXIDE_SOS_CLIENT_SECRET
+
+sulfoxide-bromine:
+  serviceTree:
+    landscape: entei
+    cluster: *cluster
+
+vcluster:
+  replicas: 3
+  coredns:
+    replicas: 3
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  etcd:
+    replicas: 3
+    storage:
+      persistence: true
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+  syncer:
+    replicas: 3
+    labels:
+      <<: *tags
+    annotations:
+      <<: *tags
+    podAnnotations:
+      <<: *tags
+    podLabels:
+      <<: *tags
+    extraArgs:
+      - --kube-config-context-name=raichu-talc
+      - --out-kube-config-server=https://raichu.talc.kubernetes.atomi.cloud
+      - --sync-labels=atomi.cloud/*
+  ingress:
+    host: raichu.talc.kubernetes.atomi.cloud
+
