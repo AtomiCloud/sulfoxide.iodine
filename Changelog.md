@@ -1,3 +1,10 @@
+## [1.27.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.26.0...v1.27.0) (2024-08-28)
+
+
+### 🚀 New Features
+
+* values for mica & talc ([9b4fdf5](https://github.com/AtomiCloud/sulfoxide.iodine/commit/9b4fdf5d3850c0521bf09604081033f1cbd23bb8))
+
 ## [1.26.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.25.0...v1.26.0) (2024-08-19)
 
 
