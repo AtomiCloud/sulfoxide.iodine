@@ -1,3 +1,10 @@
+## [1.28.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.27.0...v1.28.0) (2024-10-02)
+
+
+### 📦 Upstreams Changes
+
+* **atominix:** ugrading to 28.0.0 ([08786a5](https://github.com/AtomiCloud/sulfoxide.iodine/commit/08786a5147e00ee6b39948b716f94c9a5257dedc))
+
 ## [1.27.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.26.0...v1.27.0) (2024-08-28)
 
 
