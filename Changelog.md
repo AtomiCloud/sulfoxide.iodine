@@ -1,3 +1,10 @@
+## [1.28.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.28.0...v1.28.1) (2024-11-17)
+
+
+### 🐛 Bug Fixes
+
+* pin to 1c ([0c162d7](https://github.com/AtomiCloud/sulfoxide.iodine/commit/0c162d72449a8a97c5881fbb9da348609fb8fd43))
+
 ## [1.28.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.27.0...v1.28.0) (2024-10-02)
 
 
