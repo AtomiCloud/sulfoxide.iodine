@@ -29,7 +29,7 @@ vcluster:
       <<: *tags
   etcd:
     nodeSelector:
-      topology.kubernetes.io/zone: ap-southeast-1a
+      topology.kubernetes.io/zone: ap-southeast-1c
     storage:
       persistence: true
       className: ebs-gp3
