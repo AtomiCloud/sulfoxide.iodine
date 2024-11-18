@@ -1,3 +1,10 @@
+## [1.28.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.28.1...v1.28.2) (2024-11-18)
+
+
+### 🐛 Bug Fixes
+
+* remove affinity ([c60cfb8](https://github.com/AtomiCloud/sulfoxide.iodine/commit/c60cfb80eb9530287ed8988f72a927e1f59fb632))
+
 ## [1.28.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.28.0...v1.28.1) (2024-11-17)
 
 
