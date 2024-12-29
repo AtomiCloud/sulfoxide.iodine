@@ -1,3 +1,10 @@
+## [1.28.3](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.28.2...v1.28.3) (2024-12-29)
+
+
+### 🐛 Bug Fixes
+
+* allow reference resolution ([307aa97](https://github.com/AtomiCloud/sulfoxide.iodine/commit/307aa97ff5e7b23d8498e82a9e5166fe31e09d2f))
+
 ## [1.28.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.28.1...v1.28.2) (2024-11-18)
 
 
