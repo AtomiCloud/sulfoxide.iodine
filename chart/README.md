@@ -15,7 +15,7 @@ Helm chart to install virtual cluster on a physical cluster
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| auth | object | `{"clientId":{"remoteName":"PICHU_SULFOXIDE_SOS_CLIENT_ID","secretKey":"CLIENT_ID"},"clientSecret":{"remoteName":"PICHU_SULFOXIDE_SOS_CLIENT_SECRET","secretKey":"CLIENT_SECRET"},"name":"root-token","policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","secretStore":{"kind":"SecretStore","name":"iodine"},"upsyncNamespace":"sulfoxide"}` | Root Doppler token |
+| auth | object | `{"clientId":{"remoteName":"PICHU_SULFOXIDE_SOS_CLIENT_ID","secretKey":"CLIENT_ID"},"clientSecret":{"remoteName":"PICHU_SULFOXIDE_SOS_CLIENT_SECRET","secretKey":"CLIENT_SECRET"},"name":"root-token","policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1m","secretStore":{"kind":"SecretStore","name":"iodine"},"upsyncNamespace":"sulfoxide"}` | Root Doppler token |
 | auth.clientId | object | `{"remoteName":"PICHU_SULFOXIDE_SOS_CLIENT_ID","secretKey":"CLIENT_ID"}` | Upsync secret of secrets reference for client ID |
 | auth.clientId.remoteName | string | `"PICHU_SULFOXIDE_SOS_CLIENT_ID"` | remote reference of the CLIENT_ID in the secret of secrets store |
 | auth.clientId.secretKey | string | `"CLIENT_ID"` | secret key to store CLIENT_ID |
@@ -25,7 +25,7 @@ Helm chart to install virtual cluster on a physical cluster
 | auth.name | string | `"root-token"` | name of the secret to be created |
 | auth.policy.creation | string | `"Owner"` | External Secret creation policy |
 | auth.policy.deletion | string | `"Retain"` | External Secret deletion policy |
-| auth.refreshInterval | string | `"1h"` | external secret refresh interval |
+| auth.refreshInterval | string | `"1m"` | external secret refresh interval |
 | auth.secretStore | object | `{"kind":"SecretStore","name":"iodine"}` | Secret store to reference |
 | auth.secretStore.kind | string | `"SecretStore"` | kind of the secret store to reference |
 | auth.secretStore.name | string | `"iodine"` | name of the secret store to reference |

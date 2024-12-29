@@ -35,7 +35,7 @@ secretAnnotation:
 # -- Root Doppler token
 auth:
   # -- external secret refresh interval
-  refreshInterval: 1h
+  refreshInterval: 1m
   # -- Secret store to reference
   secretStore:
     # -- name of the secret store to reference
