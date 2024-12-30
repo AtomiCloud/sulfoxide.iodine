@@ -1,3 +1,10 @@
+## [1.28.4](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.28.3...v1.28.4) (2024-12-30)
+
+
+### 🐛 Bug Fixes
+
+* refer to infisical secretstore instead of iodine for root token ([e1d626c](https://github.com/AtomiCloud/sulfoxide.iodine/commit/e1d626c91e4febcfd8c019eae0e1a2c707a675ee))
+
 ## [1.28.3](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.28.2...v1.28.3) (2024-12-29)
 
 
