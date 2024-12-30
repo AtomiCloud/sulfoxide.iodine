@@ -32,16 +32,16 @@ sulfoxide-bromine:
 secretAnnotation:
   argocd.argoproj.io/sync-wave: "-3"
 
-# -- Root Doppler token
+# -- Root Infisical token
 auth:
   # -- external secret refresh interval
   refreshInterval: 1m
   # -- Secret store to reference
   secretStore:
     # -- name of the secret store to reference
-    name: *service
+    name: infisical
     # -- kind of the secret store to reference
-    kind: SecretStore
+    kind: ClusterSecretStore
   policy:
     # -- External Secret creation policy
     creation: Owner
