@@ -1,3 +1,10 @@
+## [1.30.1](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.30.0...v1.30.1) (2025-08-02)
+
+
+### 🐛 Bug Fixes
+
+* remove unused bromine dependency ([35bef19](https://github.com/AtomiCloud/sulfoxide.iodine/commit/35bef19066e391449041137b3f58cfc721e0e276))
+
 ## [1.30.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.29.0...v1.30.0) (2025-08-02)
 
 
