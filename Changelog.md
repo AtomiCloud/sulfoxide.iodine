@@ -1,3 +1,10 @@
+## [1.30.5](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.30.4...v1.30.5) (2025-08-02)
+
+
+### 🐛 Bug Fixes
+
+* remove cidr fix ([aaf1379](https://github.com/AtomiCloud/sulfoxide.iodine/commit/aaf137939d68098336f36206c2f12a420a2b5ef8))
+
 ## [1.30.4](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.30.3...v1.30.4) (2025-08-02)
 
 
