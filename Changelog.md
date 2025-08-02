@@ -1,3 +1,10 @@
+## [1.30.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.29.0...v1.30.0) (2025-08-02)
+
+
+### 📦 Upstreams Changes
+
+* migrate to externalsecret v1 ([22dc1b3](https://github.com/AtomiCloud/sulfoxide.iodine/commit/22dc1b35f1832bb5b0f6f553adbe14fedb3cda3b))
+
 ## [1.29.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.28.4...v1.29.0) (2025-08-02)
 
 
