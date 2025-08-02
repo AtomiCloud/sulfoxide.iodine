@@ -1,3 +1,10 @@
+## [1.30.3](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.30.2...v1.30.3) (2025-08-02)
+
+
+### 🐛 Bug Fixes
+
+* **attempt:** incorrect service cidr in vcluster ([2e62976](https://github.com/AtomiCloud/sulfoxide.iodine/commit/2e62976cc420e2c12a84a5301ac1a3ddbb798f85))
+
 ## [1.30.2](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.30.1...v1.30.2) (2025-08-02)
 
 
