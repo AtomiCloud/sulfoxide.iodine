@@ -44,5 +44,6 @@ vcluster:
       - --kube-config-context-name=pikachu-opal
       - --out-kube-config-server=https://pikachu.opal.kubernetes.atomi.cloud
       - --sync-labels=atomi.cloud/*
+      - --service-cidr=10.245.0.0/16
   ingress:
     host: pikachu.opal.kubernetes.atomi.cloud
