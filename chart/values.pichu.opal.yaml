@@ -16,7 +16,7 @@ vcluster:
   replicas: 1
   api:
     extraArgs:
-      - --service-cidr=10.245.0.0/16
+      - --service-cluster-ip-range=10.245.0.0/16
   coredns:
     replicas: 1
     podAnnotations:
