@@ -10,7 +10,7 @@ dependencies:
     version: v0.19.7
     repository: https://charts.loft.sh
   - name: sulfoxide-bromine
-    version: 1.6.0
+    version: 1.8.0
     condition: sulfoxide-bromine.enabled
     repository: oci://ghcr.io/atomicloud/sulfoxide.bromine
 #  - name: etcd
