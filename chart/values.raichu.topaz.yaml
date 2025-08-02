@@ -12,11 +12,6 @@ auth:
   clientSecret:
     remoteName: RAICHU_SULFOXIDE_SOS_CLIENT_SECRET
 
-sulfoxide-bromine:
-  serviceTree:
-    landscape: entei
-    cluster: *cluster
-
 vcluster:
   replicas: 3
   coredns:

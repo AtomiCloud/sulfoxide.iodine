@@ -11,23 +11,6 @@ tags: &tags
   atomi.cloud/service: *service
   atomi.cloud/layer: *layer
 
-# -- Create SecretStore via secret of secrets pattern
-sulfoxide-bromine:
-  serviceTree:
-    platform: sulfoxide
-    service: sos
-  annotations:
-    argocd.argoproj.io/sync-wave: "-5"
-  # -- Store name to create
-  storeName: *service
-  # -- Secret of Secrets reference
-  rootSecret:
-    name: *service
-    # -- DOPPLER Token Reference
-    ref:
-      clientId: SULFOXIDE_IODINE_CLIENT_ID
-      clientSecret: SULFOXIDE_IODINE_CLIENT_SECRET
-
 # -- Secret Annotations (External Secrets) to control synchronization
 secretAnnotation:
   argocd.argoproj.io/sync-wave: "-3"

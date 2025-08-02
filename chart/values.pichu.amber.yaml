@@ -14,11 +14,6 @@ auth:
   clientSecret:
     remoteName: PICHU_SULFOXIDE_SOS_CLIENT_SECRET
 
-sulfoxide-bromine:
-  serviceTree:
-    landscape: entei
-    cluster: *cluster
-
 vcluster:
   replicas: 1
   coredns:
