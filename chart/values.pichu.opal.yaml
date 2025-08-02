@@ -14,6 +14,9 @@ auth:
 
 vcluster:
   replicas: 1
+  api:
+    extraArgs:
+      - --service-cidr=10.245.0.0/16
   coredns:
     replicas: 1
     podAnnotations:
@@ -44,6 +47,5 @@ vcluster:
       - --kube-config-context-name=pichu-opal
       - --out-kube-config-server=https://pichu.opal.kubernetes.atomi.cloud
       - --sync-labels=atomi.cloud/*
-      - --service-cidr=10.245.0.0/16
   ingress:
     host: pichu.opal.kubernetes.atomi.cloud
