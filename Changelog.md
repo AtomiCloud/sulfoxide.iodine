@@ -1,3 +1,10 @@
+## [1.31.0](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.30.5...v1.31.0) (2025-08-03)
+
+
+### 📦 Upstreams Changes
+
+* upgrade 0.19.10 ([5ad44f4](https://github.com/AtomiCloud/sulfoxide.iodine/commit/5ad44f4ae2e847ba952052dffb242723b65c6597))
+
 ## [1.30.5](https://github.com/AtomiCloud/sulfoxide.iodine/compare/v1.30.4...v1.30.5) (2025-08-02)
 
 
