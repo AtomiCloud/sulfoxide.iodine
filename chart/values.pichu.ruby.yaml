@@ -12,7 +12,6 @@ auth:
   clientSecret:
     remoteName: PICHU_SULFOXIDE_SOS_CLIENT_SECRET
 
-
 vcluster:
   replicas: 1
   coredns:
@@ -47,4 +46,3 @@ vcluster:
       - --sync-labels=atomi.cloud/*
   ingress:
     host: pichu.ruby.kubernetes.atomi.cloud
-

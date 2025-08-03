@@ -7,7 +7,7 @@ tags: &tags
   atomi.cloud/cluster: *cluster
 
 auth:
-  clientId: 
+  clientId:
     remoteName: RAICHU_SULFOXIDE_SOS_CLIENT_ID
   clientSecret:
     remoteName: RAICHU_SULFOXIDE_SOS_CLIENT_SECRET
@@ -49,6 +49,3 @@ vcluster:
       - --sync-labels=atomi.cloud/*
   ingress:
     host: raichu.amber.kubernetes.atomi.cloud
-
-
-

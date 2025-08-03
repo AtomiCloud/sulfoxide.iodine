@@ -2,8 +2,6 @@ serviceTree:
   landscape: &landscape pichu
   cluster: &cluster amber
 
-
-
 tags: &tags
   atomi.cloud/landscape: *landscape
   atomi.cloud/cluster: *cluster
@@ -51,4 +49,3 @@ vcluster:
       - --sync-labels=atomi.cloud/*
   ingress:
     host: pichu.amber.kubernetes.atomi.cloud
-

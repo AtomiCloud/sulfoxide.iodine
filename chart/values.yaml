@@ -2,8 +2,7 @@
 serviceTree:
   platform: &platform sulfoxide
   service: &service iodine
-  layer: &layer "1"
-
+  layer: &layer '1'
 
 # -- Kubernetes labels and annotations, following Service Tree
 tags: &tags
@@ -13,7 +12,7 @@ tags: &tags
 
 # -- Secret Annotations (External Secrets) to control synchronization
 secretAnnotation:
-  argocd.argoproj.io/sync-wave: "-3"
+  argocd.argoproj.io/sync-wave: '-3'
 
 # -- Root Infisical token
 auth:
@@ -50,171 +49,154 @@ auth:
 
 # -- Virtual Cluster Configuration. See [vcluster documentation](https://artifacthub.io/packages/helm/loft/vcluster)
 vcluster:
-  replicas: 1
-  coredns:
-    replicas: 1
-    podAnnotations:
-      <<: *tags
-      atomi.cloud/module: coredns
-      drop_log: "true"
-    podLabels:
-      <<: *tags
-      atomi.cloud/module: coredns
-  etcd:
-    storage:
-      persistence: false
-    resources:
-      requests:
-        cpu: 500m
-        memory: 512Mi
-      limits:
-        cpu: 1000m
-        memory: 1.5Gi
-    labels:
-      <<: *tags
-      atomi.cloud/module: etcd
-    annotations:
-      <<: *tags
-      atomi.cloud/module: etcd
-      drop_log: "true"
-    podAnnotations:
-      <<: *tags
-      atomi.cloud/module: etcd
-      drop_log: "true"
-    podLabels:
-      <<: *tags
-      atomi.cloud/module: etcd
-    affinity:
-      podAntiAffinity:
-        preferredDuringSchedulingIgnoredDuringExecution: []
-    topologySpreadConstraints:
-      - maxSkew: 1
-        topologyKey: topology.kubernetes.io/zone
-        whenUnsatisfiable: ScheduleAnyway
-        labelSelector:
-          matchLabels:
+  controlPlane:
+    backingStore:
+      etcd:
+        deploy:
+          enabled: true
+          statefulSet:
+            pods:
+              annotations:
+                <<: *tags
+                atomi.cloud/module: etcd
+                drop_log: 'true'
+              labels:
+                <<: *tags
+                atomi.cloud/module: etcd
+                drop_log: 'true'
+            annotations:
+              <<: *tags
+              atomi.cloud/module: etcd
+              drop_log: 'true'
+            labels:
+              <<: *tags
+              atomi.cloud/module: etcd
+            persistence:
+              volumeClaim:
+                enabled: false
+            resources:
+              limits:
+                cpu: 1000m
+                memory: 1.5Gi
+              requests:
+                cpu: 500m
+                memory: 512Mi
+            scheduling:
+              affinity:
+                podAntiAffinity:
+                  preferredDuringSchedulingIgnoredDuringExecution: []
+              topologySpreadConstraints:
+                - maxSkew: 1
+                  topologyKey: topology.kubernetes.io/zone
+                  whenUnsatisfiable: ScheduleAnyway
+                  labelSelector:
+                    matchLabels:
+                      <<: *tags
+                      atomi.cloud/module: etcd
+    coredns:
+      enabled: true
+      deployment:
+        replicas: 1
+        labels:
+          <<: *tags
+          atomi.cloud/module: coredns
+          drop_log: 'true'
+        annotations:
+          <<: *tags
+          atomi.cloud/module: coredns
+          drop_log: 'true'
+        pods:
+          annotations:
             <<: *tags
-            atomi.cloud/module: etcd
-  mapServices:
-    fromHost:
-      - from: sulfoxide/entei-silicon-otlp-collector
-        to: sulfoxide/silicon-otlp-collector
-  sync:
-    configmaps:
-      all: true
-    secrets:
-      all: true
-    ingresses:
+            atomi.cloud/module: coredns
+            drop_log: 'true'
+          labels:
+            <<: *tags
+            atomi.cloud/module: coredns
+    distro:
+      k8s:
+        enabled: true
+    ingress:
       enabled: true
-    pods:
-      enabled: true
-      ephemeralContainers: true
-      status: true
-    nodes:
-      enabled: true
-      fakeKubeletIPs: true
-      enableScheduler: false
-      syncNodeChanges: true
-      syncAllNodes: true
-  proxy:
-    metricsServer:
-      nodes:
-        enabled: false
+      host: kubernetes.atomi.cloud
+      spec:
+        ingressClassName: nginx
+    proxy:
+      extraSANs:
+        - https://kubernetes.atomi.cloud
+    statefulSet:
       pods:
-        enabled: false
-
-  syncer:
-    resources:
-      requests:
-        cpu: 500m
-        memory: 1Gi
-      limits:
-        cpu: 1000m
-        memory: 2Gi
-    annotations:
-      <<: *tags
-      atomi.cloud/module: syncer
-      drop_log: "true"
-    labels:
-      <<: *tags
-      atomi.cloud/module: syncer
-    podAnnotations:
-      <<: *tags
-      atomi.cloud/module: syncer
-      drop_log: "true"
-    podLabels:
-      <<: *tags
-      atomi.cloud/module: syncer
-    topologySpreadConstraints:
-      - maxSkew: 1
-        topologyKey: topology.kubernetes.io/zone
-        whenUnsatisfiable: ScheduleAnyway
-        labelSelector:
-          matchLabels:
-            <<: *tags
-            atomi.cloud/module: syncer
-    extraArgs:
-      - --tls-san=https://kubernetes.atomi.cloud
-  ingress:
-    enabled: true
-    ingressClassName: nginx
-    host: kubernetes.atomi.cloud
-  telemetry:
-    disabled: true
+        labels:
+          <<: *tags
+          atomi.cloud/module: syncer
+        annotations:
+          <<: *tags
+          atomi.cloud/module: syncer
+      labels:
+        <<: *tags
+        atomi.cloud/module: syncer
+      annotations:
+        <<: *tags
+        atomi.cloud/module: syncer
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 2Gi
+          ephemeral-storage: 8Gi
+        requests:
+          ephemeral-storage: 400Mi
+          cpu: 200m
+          memory: 256Mi
+      highAvailability:
+        replicas: 1
+      scheduling:
+        podManagementPolicy: OrderedReady
+  experimental:
+    deploy:
+      vcluster:
+        manifests: |
+          apiVersion: v1
+          kind: Namespace
+          metadata:
+            labels:
+              kubernetes.io/metadata.name: sulfoxide
+            name: sulfoxide
+  integrations:
+    metricsServer:
+      enabled: true
+      nodes: false
+      pods: false
+  networking:
+    replicateServices:
+      fromHost:
+        - from: sulfoxide/entei-silicon-otlp-collector
+          to: sulfoxide/silicon-otlp-collector
   plugin:
     secret-syncer:
       image: ghcr.io/kirinnee/vcluster-secret-syncer/secret-syncer:1.1.0
       imagePullPolicy: IfNotPresent
       resources:
-        requests:
-          cpu: 31m
-          memory: 32Mi
         limits:
           cpu: 125m
           memory: 128Mi
-  init:
-    manifests: |
-      apiVersion: v1
-      kind: Namespace
-      metadata:
-        labels:
-          kubernetes.io/metadata.name: sulfoxide
-        name: sulfoxide
-
-# -- ETCD Cluster configuration. See [etcd documentation](https://artifacthub.io/packages/helm/bitnami/etcd)
-etcd:
-  removeMemberOnContainerTermination: false
-  auth:
-    rbac:
-      create: false
-    token:
-      enabled: false
-    client:
-      enableAuthentication: false
-    peer:
-      enableAuthentication: false
-  commonLabels:
-    <<: *tags
-    atomi.cloud/module: etcd
-  podLabels:
-    <<: *tags
-    atomi.cloud/module: etcd
-  commonAnnotations:
-    <<: *tags
-    atomi.cloud/module: etcd
-  podAnnotations:
-    <<: *tags
-    atomi.cloud/module: etcd
-  topologySpreadConstraints:
-    - maxSkew: 1
-      topologyKey: topology.kubernetes.io/zone
-      whenUnsatisfiable: ScheduleAnyway
-      labelSelector:
-        matchLabels:
-          <<: *tags
-          atomi.cloud/module: etcd
-  persistence:
+        requests:
+          cpu: 31m
+          memory: 32Mi
+  sync:
+    fromHost:
+      ingressClasses:
+        enabled: true
+      nodes:
+        enabled: true
+        selector:
+          all: true
+        syncBackChanges: true
+    toHost:
+      configMaps:
+        all: true
+      ingresses:
+        enabled: true
+      secrets:
+        all: true
+  telemetry:
     enabled: false
-  replicaCount: 3
-
-

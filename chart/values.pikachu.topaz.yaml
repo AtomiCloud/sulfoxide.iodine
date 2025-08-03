@@ -49,4 +49,3 @@ vcluster:
       - --sync-labels=atomi.cloud/*
   ingress:
     host: pikachu.topaz.kubernetes.atomi.cloud
-

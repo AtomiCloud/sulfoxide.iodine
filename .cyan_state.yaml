@@ -1,0 +1,19 @@
+atomi/nix-init:
+  active: true
+  history:
+    - version: 13
+      time: 2025-08-03T12:47:31.596798Z
+      answers:
+        Description of this Project:
+          type: String
+          value: iodine
+        init-type:
+          type: String
+          value: Standard
+        pre-commit:
+          type: Bool
+          value: true
+        standard-binary:
+          type: Bool
+          value: true
+      deterministic_states: {}

@@ -7,18 +7,21 @@ pre-commit-lib.run {
     # formatter
     treefmt = {
       enable = true;
-      excludes = [ "chart/.*(yaml|yml)" "chart/README.md" "Changelog.md" "docs/developer/CommitConventions.md" ];
+      package = formatter;
+      excludes = [
+        ".*(Changelog|README|CommitConventions).+(MD|md)"
+        ".*chart/templates.*"
+      ];
     };
 
     # linters From https://github.com/cachix/pre-commit-hooks.nix
-    shellcheck = {
-      enable = false;
-    };
+    shellcheck.enable = false;
 
+    # custom precommits 
     a-infisical = {
       enable = true;
-      name = "Secrets Scanning (Past Commits)";
-      description = "Scan for possible secrets in past commits";
+      name = "Secrets Scanning";
+      description = "Scan for possible secrets";
       entry = "${packages.infisical}/bin/infisical scan . -v";
       language = "system";
       pass_filenames = false;
@@ -26,19 +29,9 @@ pre-commit-lib.run {
 
     a-infisical-staged = {
       enable = true;
-      name = "Secrets Scanning (Staged)";
+      name = "Secrets Scanning (Staged files)";
       description = "Scan for possible secrets in staged files";
       entry = "${packages.infisical}/bin/infisical scan git-changes --staged -v";
-      language = "system";
-      pass_filenames = false;
-    };
-
-    a-helm-lint = {
-      enable = true;
-      name = "Helm Lint";
-      description = "Lints helm";
-      entry = "${packages.helm}/bin/helm lint -f chart/values.yaml chart";
-      files = "chart/.*";
       language = "system";
       pass_filenames = false;
     };
@@ -47,9 +40,9 @@ pre-commit-lib.run {
       enable = true;
       name = "Gitlint";
       description = "Lints git commit message";
-      entry = "${packages.gitlint}/bin/gitlint --staged --msg-filename .git/COMMIT_EDITMSG";
+      entry = "${packages.gitlint}/bin/gitlint --staged --msg-filename";
       language = "system";
-      pass_filenames = false;
+      pass_filenames = true;
       stages = [ "commit-msg" ];
     };
 
@@ -75,24 +68,30 @@ pre-commit-lib.run {
     a-enforce-exec = {
       enable = true;
       name = "Enforce Shell Script executable";
-      entry = "${packages.coreutils}/bin/chmod +x";
+      entry = "${packages.atomiutils}/bin/chmod +x";
       files = ".*sh$";
       language = "system";
       pass_filenames = true;
     };
-    a-helm-docs = {
+
+    a-helm-lint = rec {
       enable = true;
-      name = "Helm Docs";
-      entry = "${packages.helm-docs}/bin/helm-docs";
-      files = ".*";
+      name = "Lint Helm Charts";
+      package = packages.infralint;
+      description = "Lints helm charts";
+      entry = "${package}/bin/helmlint";
+      files = "infra/.*";
       language = "system";
       pass_filenames = false;
     };
-  };
 
-  settings = {
-    treefmt = {
-      package = formatter;
+    a-helm-docs = {
+      enable = true;
+      name = "Helm Docs";
+      entry = "${packages.infralint}/bin/helm-docs";
+      files = ".*";
+      language = "system";
+      pass_filenames = false;
     };
   };
 }

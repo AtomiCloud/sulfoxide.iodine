@@ -48,4 +48,3 @@ vcluster:
       - --sync-labels=atomi.cloud/*
   ingress:
     host: raichu.mica.kubernetes.atomi.cloud
-

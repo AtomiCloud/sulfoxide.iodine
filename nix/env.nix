@@ -2,37 +2,27 @@
 with packages;
 {
   system = [
-    coreutils
-    sd
-    bash
-    jq
-    yq-go
+    atomiutils
+    infrautils
   ];
 
   dev = [
     pls
     git
-    skopeo
     vcluster
   ];
 
-  infra = [
-    k3d
-    helm
-    kubectl
-  ];
-
   main = [
+    infisical
   ];
 
   lint = [
     # core
     treefmt
-
-    helm-docs
-
     gitlint
     shellcheck
+    infralint
+    sg
   ];
 
   releaser = [

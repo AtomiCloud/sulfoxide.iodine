@@ -1,6 +1,6 @@
 dependencies:
-- name: vcluster-k8s
+- name: vcluster
   repository: https://charts.loft.sh
-  version: 0.19.10
-digest: sha256:71bf500312698a902e1fe052bc713c3b5e88c3053a7587879f7ecabda3c2583a
-generated: "2025-08-03T16:21:46.285833+08:00"
+  version: 0.26.0
+digest: sha256:11b112ad2dee461da7d8dd34bb251ad1ba2b7e84ca5a14f302d2ec1b2eeca2c0
+generated: "2025-08-03T21:03:59.072501+08:00"

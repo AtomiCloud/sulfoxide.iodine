@@ -1,4 +1,4 @@
-{ pkgs, atomi, pkgs-240810 }:
+{ pkgs, pkgs-2505, pkgs-unstable, atomi }:
 let
 
   all = {
@@ -6,40 +6,33 @@ let
       with atomi;
       {
         inherit
-          pls
-          sg;
+          atomiutils
+          infrautils
+          infralint
+          sg
+          pls;
       }
     );
-    pkgs240810 = (
-      with pkgs-240810;
+    nix-unstable = (
+      with pkgs-unstable;
+      { }
+    );
+    nix-2505 = (
+      with pkgs-2505;
       {
         inherit
-          coreutils
-          sd
-          bash
           git
-          jq
-          yq-go
-          skopeo
-
-          # lint
-          treefmt
           infisical
-
-          # infra
-          vcluster
-          k3d
-          helm-docs
-          kubectl
+          treefmt
           gitlint
           shellcheck
+          vcluster
           ;
-        helm = kubernetes-helm;
-
       }
     );
   };
 in
 with all;
-atomipkgs //
-pkgs240810
+nix-2505 //
+nix-unstable //
+atomipkgs

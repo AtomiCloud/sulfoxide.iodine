@@ -1,4 +1,5 @@
 {
+  description = "iodine";
   inputs = {
     # util
     flake-utils.url = "github:numtide/flake-utils";
@@ -6,10 +7,9 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
 
     # registry
-    nixpkgs.url = "nixpkgs/5e0ca22929f3342b19569b21b2f3462f053e497b";
-    nixpkgs-240810.url = "nixpkgs/5e0ca22929f3342b19569b21b2f3462f053e497b";
-    atomipkgs.url = "github:kirinnee/test-nix-repo/v28.0.0";
-
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs-2505.url = "nixpkgs/nixos-25.05";
+    atomipkgs.url = "github:AtomiCloud/nix-registry/v2";
   };
   outputs =
     { self
@@ -21,19 +21,20 @@
 
       # registries
     , atomipkgs
-    , nixpkgs
-    , nixpkgs-240810
+    , nixpkgs-2505
+    , nixpkgs-unstable
 
     } @inputs:
     (flake-utils.lib.eachDefaultSystem
       (
         system:
         let
-          pkgs = nixpkgs.legacyPackages.${system};
-          pkgs-240810 = nixpkgs-240810.legacyPackages.${system};
+          pkgs-2505 = nixpkgs-2505.legacyPackages.${system};
+          pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
           atomi = atomipkgs.packages.${system};
           pre-commit-lib = pre-commit-hooks.lib.${system};
         in
+        let pkgs = pkgs-2505; in
         with rec {
           pre-commit = import ./nix/pre-commit.nix {
             inherit packages pre-commit-lib formatter;
@@ -43,7 +44,7 @@
           };
           packages = import ./nix/packages.nix
             {
-              inherit pkgs pkgs-240810 atomi;
+              inherit pkgs pkgs-2505 pkgs-unstable atomi;
             };
           env = import ./nix/env.nix {
             inherit pkgs packages;
