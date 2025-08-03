@@ -13,39 +13,52 @@ auth:
     remoteName: PIKACHU_SULFOXIDE_SOS_CLIENT_SECRET
 
 vcluster:
-  replicas: 1
-  coredns:
-    replicas: 1
-    podAnnotations:
-      <<: *tags
-    podLabels:
-      <<: *tags
-  etcd:
-    storage:
-      persistence: true
-      className: ebs-gp3
-    nodeSelector:
-      topology.kubernetes.io/zone: ap-southeast-1c
-    labels:
-      <<: *tags
-    annotations:
-      <<: *tags
-    podAnnotations:
-      <<: *tags
-    podLabels:
-      <<: *tags
-  syncer:
-    labels:
-      <<: *tags
-    annotations:
-      <<: *tags
-    podAnnotations:
-      <<: *tags
-    podLabels:
-      <<: *tags
-    extraArgs:
-      - --kube-config-context-name=pikachu-amber
-      - --out-kube-config-server=https://pikachu.amber.kubernetes.atomi.cloud
-      - --sync-labels=atomi.cloud/*
-  ingress:
-    host: pikachu.amber.kubernetes.atomi.cloud
+  controlPlane:
+    backingStore:
+      etcd:
+        deploy:
+          statefulSet:
+            persistence:
+              volumeClaim:
+                enabled: true
+                storageClass: ebs-gp3
+            highAvailability:
+              replicas: 1
+            annotations:
+              <<: *tags
+            labels:
+              <<: *tags
+            pods:
+              labels:
+                <<: *tags
+              annotations:
+                <<: *tags
+    coredns:
+      deployment:
+        replicas: 1
+        annotations:
+          <<: *tags
+        labels:
+          <<: *tags
+        pods:
+          annotations:
+            <<: *tags
+          labels:
+            <<: *tags
+    ingress:
+      host: pikachu.amber.kubernetes.atomi.cloud
+    statefulSet:
+      highAvailability:
+        replicas: 1
+      pods:
+        labels:
+          <<: *tags
+        annotations:
+          <<: *tags
+      labels:
+        <<: *tags
+      annotations:
+        <<: *tags
+  exportKubeConfig:
+    context: pikachu-amber
+    server: https://pikachu.amber.kubernetes.atomi.cloud

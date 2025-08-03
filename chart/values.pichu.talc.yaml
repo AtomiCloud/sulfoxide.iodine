@@ -13,36 +13,51 @@ auth:
     remoteName: PICHU_SULFOXIDE_SOS_CLIENT_SECRET
 
 vcluster:
-  replicas: 1
-  coredns:
-    replicas: 1
-    podAnnotations:
-      <<: *tags
-    podLabels:
-      <<: *tags
-  etcd:
-    storage:
-      persistence: true
-    labels:
-      <<: *tags
-    annotations:
-      <<: *tags
-    podAnnotations:
-      <<: *tags
-    podLabels:
-      <<: *tags
-  syncer:
-    labels:
-      <<: *tags
-    annotations:
-      <<: *tags
-    podAnnotations:
-      <<: *tags
-    podLabels:
-      <<: *tags
-    extraArgs:
-      - --kube-config-context-name=pichu-talc
-      - --out-kube-config-server=https://pichu.talc.kubernetes.atomi.cloud
-      - --sync-labels=atomi.cloud/*
-  ingress:
-    host: pichu.talc.kubernetes.atomi.cloud
+  controlPlane:
+    backingStore:
+      etcd:
+        deploy:
+          statefulSet:
+            persistence:
+              volumeClaim:
+                enabled: true
+            highAvailability:
+              replicas: 1
+            annotations:
+              <<: *tags
+            labels:
+              <<: *tags
+            pods:
+              labels:
+                <<: *tags
+              annotations:
+                <<: *tags
+    coredns:
+      deployment:
+        replicas: 1
+        annotations:
+          <<: *tags
+        labels:
+          <<: *tags
+        pods:
+          annotations:
+            <<: *tags
+          labels:
+            <<: *tags
+    ingress:
+      host: pichu.talc.kubernetes.atomi.cloud
+    statefulSet:
+      highAvailability:
+        replicas: 1
+      pods:
+        labels:
+          <<: *tags
+        annotations:
+          <<: *tags
+      labels:
+        <<: *tags
+      annotations:
+        <<: *tags
+  exportKubeConfig:
+    context: pichu-talc
+    server: https://pichu.talc.kubernetes.atomi.cloud

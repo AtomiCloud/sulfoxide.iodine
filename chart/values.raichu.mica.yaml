@@ -13,38 +13,51 @@ auth:
     remoteName: RAICHU_SULFOXIDE_SOS_CLIENT_SECRET
 
 vcluster:
-  replicas: 3
-  coredns:
-    replicas: 3
-    podAnnotations:
-      <<: *tags
-    podLabels:
-      <<: *tags
-  etcd:
-    replicas: 3
-    storage:
-      persistence: true
-    labels:
-      <<: *tags
-    annotations:
-      <<: *tags
-    podAnnotations:
-      <<: *tags
-    podLabels:
-      <<: *tags
-  syncer:
-    replicas: 3
-    labels:
-      <<: *tags
-    annotations:
-      <<: *tags
-    podAnnotations:
-      <<: *tags
-    podLabels:
-      <<: *tags
-    extraArgs:
-      - --kube-config-context-name=raichu-mica
-      - --out-kube-config-server=https://raichu.mica.kubernetes.atomi.cloud
-      - --sync-labels=atomi.cloud/*
-  ingress:
-    host: raichu.mica.kubernetes.atomi.cloud
+  controlPlane:
+    backingStore:
+      etcd:
+        deploy:
+          statefulSet:
+            persistence:
+              volumeClaim:
+                enabled: true
+            highAvailability:
+              replicas: 3
+            annotations:
+              <<: *tags
+            labels:
+              <<: *tags
+            pods:
+              labels:
+                <<: *tags
+              annotations:
+                <<: *tags
+    coredns:
+      deployment:
+        replicas: 3
+        annotations:
+          <<: *tags
+        labels:
+          <<: *tags
+        pods:
+          annotations:
+            <<: *tags
+          labels:
+            <<: *tags
+    ingress:
+      host: raichu.mica.kubernetes.atomi.cloud
+    statefulSet:
+      highAvailability:
+        replicas: 3
+      pods:
+        labels:
+          <<: *tags
+        annotations:
+          <<: *tags
+      labels:
+        <<: *tags
+      annotations:
+        <<: *tags
+  exportKubeConfig:
+    context: raichu-mica
+    server: https://raichu.mica.kubernetes.atomi.cloud
