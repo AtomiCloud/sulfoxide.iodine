@@ -34,7 +34,7 @@ vcluster:
                 <<: *tags
     coredns:
       deployment:
-        replicas: 3
+        replicas: 5
         annotations:
           <<: *tags
         labels:
